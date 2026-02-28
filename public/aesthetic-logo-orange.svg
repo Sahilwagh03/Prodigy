@@ -1,0 +1,115 @@
+<svg width="749" height="768" viewBox="0 0 749 768" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+
+    <!-- ░░ OUTER — warm gold → rich amber → deep ember orange ░░ -->
+    <linearGradient id="grad_outer" x1="60" y1="56" x2="689" y2="704" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#FDE68A"/>  <!-- warm gold highlight  (added) -->
+      <stop offset="25%"  stop-color="#FFB347"/>  <!-- your #FFB347          -->
+      <stop offset="55%"  stop-color="#F8A52B"/>  <!-- your #F8A52B          -->
+      <stop offset="80%"  stop-color="#F97316"/>  <!-- your #F97316          -->
+      <stop offset="100%" stop-color="#C2410C"/>  <!-- deep ember            (added) -->
+    </linearGradient>
+
+    <!-- ░░ INNER — bright champagne → amber → orange, more luminous ░░ -->
+    <linearGradient id="grad_inner" x1="590" y1="158" x2="159" y2="602" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#FFF7ED"/>  <!-- near-white warm tint  (added) -->
+      <stop offset="30%"  stop-color="#FFB347"/>  <!-- your #FFB347          -->
+      <stop offset="65%"  stop-color="#F8A52B"/>  <!-- your #F8A52B          -->
+      <stop offset="100%" stop-color="#EA6B00"/>  <!-- saturated orange-red  (added) -->
+    </linearGradient>
+
+    <!-- ░░ Radial glow — golden core bloom ░░ -->
+    <radialGradient id="glow_core" cx="374" cy="370" r="260" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#FDE68A" stop-opacity="0.60"/>
+      <stop offset="50%"  stop-color="#F8A52B" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#F97316" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- ░░ Specular shimmer — top-left catch-light ░░ -->
+    <radialGradient id="specular" cx="250" cy="200" r="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#FFFFFF" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- ░░ Edge rim gradient — adds a fiery rim-light on bottom-right ░░ -->
+    <radialGradient id="rim" cx="600" cy="620" r="300" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#FF4500" stop-opacity="0.35"/>  <!-- fire red (added) -->
+      <stop offset="100%" stop-color="#F97316" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- ░░ OUTER FILTER — warm amber-orange colored glow shadow ░░ -->
+    <filter id="filter_outer" x="-5%" y="-3%" width="112%" height="114%" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix"
+        values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 127 0" result="alpha"/>
+      <feOffset dy="8"/>
+      <feGaussianBlur stdDeviation="30"/>
+      <feComposite in2="alpha" operator="out"/>
+      <!-- warm orange tinted shadow -->
+      <feColorMatrix type="matrix"
+        values="0 0 0 0 0.97
+                0 0 0 0 0.42
+                0 0 0 0 0.06
+                0 0 0 0.55 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="colored_shadow"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="colored_shadow" result="shape"/>
+    </filter>
+
+    <!-- ░░ INNER FILTER — golden glow ░░ -->
+    <filter id="filter_inner" x="-10%" y="-8%" width="120%" height="122%" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix"
+        values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 127 0" result="alpha"/>
+      <feOffset dy="4"/>
+      <feGaussianBlur stdDeviation="20"/>
+      <feComposite in2="alpha" operator="out"/>
+      <feColorMatrix type="matrix"
+        values="0 0 0 0 1.0
+                0 0 0 0 0.60
+                0 0 0 0 0.08
+                0 0 0 0.50 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="colored_shadow"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="colored_shadow" result="shape"/>
+    </filter>
+
+    <!-- clip paths -->
+    <clipPath id="clip_outer">
+      <path d="M374.413 704C324.06 652.131 302.81 581.291 310.882 513.558C284.754 531.458 252.428 542.044 217.432 542.046V525.029C217.433 497.407 225.782 471.595 240.262 449.621C178.144 456.489 113.668 435.411 66.0528 386.362L60 380.126C109.877 328.749 177.826 306.782 243.012 314.452C226.823 291.625 217.396 264.32 217.396 234.971V217.954C252.516 217.953 284.938 228.617 311.112 246.626C302.98 178.837 324.222 107.916 374.621 56C425.015 107.913 446.258 178.83 438.13 246.615C464.3 228.615 496.706 217.945 531.811 217.942V239.975C531.81 267.137 523.429 292.48 508.969 313.946C573.242 307.28 639.882 329.346 689 379.942L682.947 386.178C635.366 435.19 570.951 456.271 508.877 449.448C523.421 471.458 531.812 497.337 531.811 525.029V542.046C496.615 542.047 464.115 531.34 437.911 513.258C446.081 581.081 424.839 652.055 374.413 704Z"/>
+    </clipPath>
+    <clipPath id="clip_inner">
+      <path d="M374.441 602C339.938 566.46 325.377 517.922 330.908 471.512C313.005 483.777 290.855 491.03 266.874 491.032V479.372C266.875 460.446 272.597 442.76 282.518 427.703C239.954 432.409 195.774 417.967 163.147 384.359L159 380.086C193.177 344.884 239.736 329.832 284.403 335.087C273.31 319.446 266.85 300.738 266.85 280.628V268.969C290.915 268.968 313.131 276.274 331.066 288.614C325.493 242.166 340.048 193.572 374.583 158C409.114 193.57 423.67 242.161 418.1 288.606C436.032 276.274 458.237 268.962 482.292 268.96V284.057C482.291 302.668 476.549 320.033 466.64 334.741C510.681 330.174 556.343 345.293 590 379.96L585.852 384.233C553.249 417.815 509.111 432.26 466.577 427.585C476.543 442.665 482.293 460.398 482.292 479.372V491.032C458.175 491.032 435.905 483.696 417.95 471.307C423.549 517.778 408.993 566.408 374.441 602Z"/>
+    </clipPath>
+
+  </defs>
+
+  <!-- ═══════════════════════════════════
+       OUTER STAR
+       ═══════════════════════════════════ -->
+  <g filter="url(#filter_outer)">
+    <path
+      d="M374.413 704C324.06 652.131 302.81 581.291 310.882 513.558C284.754 531.458 252.428 542.044 217.432 542.046V525.029C217.433 497.407 225.782 471.595 240.262 449.621C178.144 456.489 113.668 435.411 66.0528 386.362L60 380.126C109.877 328.749 177.826 306.782 243.012 314.452C226.823 291.625 217.396 264.32 217.396 234.971V217.954C252.516 217.953 284.938 228.617 311.112 246.626C302.98 178.837 324.222 107.916 374.621 56C425.015 107.913 446.258 178.83 438.13 246.615C464.3 228.615 496.706 217.945 531.811 217.942V239.975C531.81 267.137 523.429 292.48 508.969 313.946C573.242 307.28 639.882 329.346 689 379.942L682.947 386.178C635.366 435.19 570.951 456.271 508.877 449.448C523.421 471.458 531.812 497.337 531.811 525.029V542.046C496.615 542.047 464.115 531.34 437.911 513.258C446.081 581.081 424.839 652.055 374.413 704Z"
+      fill="url(#grad_outer)"
+    />
+    <!-- golden core bloom -->
+    <rect x="0" y="0" width="749" height="768" fill="url(#glow_core)"  clip-path="url(#clip_outer)"/>
+    <!-- fiery rim-light -->
+    <rect x="0" y="0" width="749" height="768" fill="url(#rim)"        clip-path="url(#clip_outer)"/>
+    <!-- specular catch-light -->
+    <rect x="0" y="0" width="749" height="768" fill="url(#specular)"   clip-path="url(#clip_outer)"/>
+  </g>
+
+  <!-- ═══════════════════════════════════
+       INNER STAR
+       ═══════════════════════════════════ -->
+  <g filter="url(#filter_inner)">
+    <path
+      d="M374.441 602C339.938 566.46 325.377 517.922 330.908 471.512C313.005 483.777 290.855 491.03 266.874 491.032V479.372C266.875 460.446 272.597 442.76 282.518 427.703C239.954 432.409 195.774 417.967 163.147 384.359L159 380.086C193.177 344.884 239.736 329.832 284.403 335.087C273.31 319.446 266.85 300.738 266.85 280.628V268.969C290.915 268.968 313.131 276.274 331.066 288.614C325.493 242.166 340.048 193.572 374.583 158C409.114 193.57 423.67 242.161 418.1 288.606C436.032 276.274 458.237 268.962 482.292 268.96V284.057C482.291 302.668 476.549 320.033 466.64 334.741C510.681 330.174 556.343 345.293 590 379.96L585.852 384.233C553.249 417.815 509.111 432.26 466.577 427.585C476.543 442.665 482.293 460.398 482.292 479.372V491.032C458.175 491.032 435.905 483.696 417.95 471.307C423.549 517.778 408.993 566.408 374.441 602Z"
+      fill="url(#grad_inner)"
+    />
+    <!-- golden core bloom on inner -->
+    <rect x="0" y="0" width="749" height="768" fill="url(#glow_core)"  clip-path="url(#clip_inner)"/>
+    <!-- inner specular -->
+    <rect x="0" y="0" width="749" height="768" fill="url(#specular)"   clip-path="url(#clip_inner)"/>
+  </g>
+
+</svg>
