@@ -1,5 +1,6 @@
 import AboutUs from "@/components/sections/about-us";
 import Experience from "@/components/sections/experience";
+import Faq from "@/components/sections/faq";
 import FeatureWork from "@/components/sections/feature-work";
 import HeroSection from "@/components/sections/hero";
 import Partners from "@/components/sections/partners";
@@ -17,6 +18,7 @@ export default function Home() {
           <FeatureWork/>
           <Services/>
           <Testimonial/>
+          <Faq/>
       </main>
     </section>
   );

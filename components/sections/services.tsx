@@ -117,7 +117,7 @@ const Services = () => {
 
   return (
     <section className="relative pt-8 lg:pt-32.5">
-      <div ref={pinRef} className="px-4">
+      <div ref={pinRef} className="px-4 max-w-340 mx-auto">
         <div className="flex flex-col">
           <div className="flex flex-col gap-4 lg:flex-row justify-between lg:items-center mb-8 lg:mb-16.25">
             <h2 className="flex-1 text-[2rem] lg:text-[2.5rem] font-semibold leading-tight tracking-[-.075rem]">

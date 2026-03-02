@@ -5,7 +5,7 @@ import { Plus } from "lucide-react";
 const AboutUs = () => {
   return (
     <div className="h-auto bg-cover pt-8 lg:pt-28 bg-no-repeat bg-position-[50%] bg-[url(/dotted-bg.webp)]">
-      <div className="h-full flex flex-col gap-4 lg:flex-row px-4">
+      <div className="h-full flex flex-col gap-4 lg:flex-row px-4 max-w-340 mx-auto">
 
         {/* Image Section (Mobile First, Desktop Second) */}
         <div className="flex-4 order-1 lg:order-2 p-4 bg-neutral-200 rounded-3xl overflow-hidden flex items-center justify-center">
