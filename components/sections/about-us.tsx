@@ -19,7 +19,7 @@ const AboutUs = () => {
         </div>
 
         {/* Text Section (Mobile Second, Desktop First) */}
-        <div className="h-svh flex-6 order-2 lg:order-1">
+        <div className="lg:h-screen flex-6 order-2 lg:order-1">
           <div className="max-w-125 h-full flex flex-col gap-5 lg:gap-10 justify-center">
 
             <h3 className="text-[2rem] lg:text-[2.5rem] font-semibold leading-tight tracking-[-.075rem]">

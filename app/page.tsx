@@ -1,7 +1,10 @@
 import AboutUs from "@/components/sections/about-us";
 import Experience from "@/components/sections/experience";
+import FeatureWork from "@/components/sections/feature-work";
 import HeroSection from "@/components/sections/hero";
 import Partners from "@/components/sections/partners";
+import Services from "@/components/sections/services";
+import Testimonial from "@/components/sections/testimonial";
 
 export default function Home() {
   return (
@@ -11,6 +14,9 @@ export default function Home() {
           <Partners/>
           <AboutUs/>
           <Experience/>
+          <FeatureWork/>
+          <Services/>
+          <Testimonial/>
       </main>
     </section>
   );

@@ -10,9 +10,9 @@ const HeroSection = () => {
           <Navbar />
         </div>
 
-        <div className="absolute blur-[13rem] bg-[#fc964c] w-full max-w-231.25 h-231.25 top-[-26.9rem] -right-146 rounded-full"></div>
-        <div className="absolute blur-[13rem] bg-[#f02508] w-full max-w-231.25 h-231.25 top-[-46.1rem] right-1/2 rounded-full transform translate-x-1/2"></div>
-        <div className=" absolute bottom-0 -left-[30%] w-full max-w-150 h-150 bg-[#9c3918] blur-[13rem] rounded-full "></div>
+        <div className="absolute blur-[13rem] bg-[#fc964c] w-full max-w-231.25 h-231.25 top-[-26.9rem] -right-146 rounded-full transform-gpu will-change-transform"></div>
+        <div className="absolute blur-[13rem] bg-[#f02508] w-full max-w-231.25 h-231.25 top-[-46.1rem] right-1/2 rounded-full transform translate-x-1/2 transform-gpu will-change-transform"></div>
+        <div className=" absolute bottom-0 -left-[30%] w-full max-w-150 h-150 bg-[#9c3918] blur-[13rem] rounded-full transform-gpu will-change-transform"></div>
         <div className="relative w-full h-full px-4">
           <div className="relative w-full h-full flex flex-col pt-28 pb-8 lg:pt-20 gap-6 justify-between items-center z-8">
             <div></div>
