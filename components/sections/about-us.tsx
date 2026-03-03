@@ -10,7 +10,7 @@ const AboutUs = () => {
         {/* Image Section (Mobile First, Desktop Second) */}
         <div className="flex-4 order-1 lg:order-2 p-4 bg-neutral-200 rounded-3xl overflow-hidden flex items-center justify-center">
           <Image
-            src="/aesthetic-logo-big.svg"
+            src="/fire-logo-big.svg"
             width={1200}
             height={800}
             alt="Aesthetic Logo"

@@ -18,11 +18,11 @@ const FeatureWork = () => {
               <div className="flex-1 flex flex-col gap-10 justify-between max-w-78.75 self-stretch">
                 <div className="bg-neutral-100 px-2 rounded-full flex justify-center items-center h-24 max-w-24 overflow-hidden">
                   <Image
-                    src="/aesthetic-logo.svg"
+                    src="/fire-logo.svg"
                     alt="feature-work-logo"
                     width={130}
                     height={130}
-                    className="scale-200"
+                    className="scale-450"
                   />
                 </div>
 
