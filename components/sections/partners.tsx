@@ -1,16 +1,33 @@
+"use client";
+import { animatePartners } from "@/animation/partners";
 import PartnerCard from "../partner-card";
+import { useLayoutEffect, useRef } from "react";
+import { gsap } from "@/lib/gsap";
 
-type Props = {};
+const Partners = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
 
-const Partners = (props: Props) => {
+  useLayoutEffect(() => {
+    if (!sectionRef.current) return;
+
+    const ctx = gsap.context(() => {
+      animatePartners(sectionRef.current!);
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <div className="h-auto bg-cover pt-8 lg:pt-28 bg-no-repeat bg-position-[50%] bg-[url(/dotted-bg.webp)]">
+    <div
+      ref={sectionRef}
+      className="h-auto bg-cover pt-8 lg:pt-28 bg-no-repeat bg-position-[50%] bg-[url(/dotted-bg.webp)]"
+    >
       <div className="flex flex-col gap-6 lg:gap-20 px-4">
         <div className="flex flex-col gap-4 lg:flex-row justify-between items-start">
-          <h6 className="text-[0.8rem] leading-[1.75] tracking-[.0675rem] font-semibold uppercase">
+          <h6 className="partner-title text-[0.8rem] leading-[1.75] tracking-[.0675rem] font-semibold uppercase">
             Our Partners
           </h6>
-          <p className="text-[2.5rem] leading-tight tracking-[-.075rem] max-w-130 font-semibold">
+          <p className="partner-paragraph text-[2.5rem] leading-tight tracking-[-.075rem] max-w-130 font-semibold">
             We collaborate with forward thinking brands to build lasting
             creative impact
           </p>

@@ -1,17 +1,17 @@
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 interface PartnerCardProps {
   blackLogo: string;
   whiteLogo: string;
   alt: string;
+  className?: string;
 }
 
-const PartnerCard = ({ blackLogo, whiteLogo, alt }: PartnerCardProps) => {
+const PartnerCard = ({ blackLogo, whiteLogo, alt , className }: PartnerCardProps) => {
   return (
-    <div className="group relative bg-white hover:bg-black transition-all duration-500 flex justify-center items-center py-12 px-8 rounded-[1.25rem] cursor-pointer">
-
+    <div className={cn("group relative bg-white hover:bg-black transition-all duration-500 flex justify-center items-center py-12 px-8 rounded-[1.25rem] cursor-pointer partner-card",className)}>
       <div className="relative overflow-hidden h-9 w-30 flex items-center justify-center">
-
         <Image
           src={blackLogo}
           alt={alt}
