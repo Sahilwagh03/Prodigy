@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter_Tight } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider"
 import "./globals.css";
+import Footer from "@/components/sections/footer";
 
 const inter = Inter_Tight({
   subsets: ["latin"],
@@ -31,6 +32,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
         {children}
+        <Footer/>
         </ThemeProvider>
       </body>
     </html>

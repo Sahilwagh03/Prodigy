@@ -1,4 +1,5 @@
 import AboutUs from "@/components/sections/about-us";
+import CTA from "@/components/sections/cta";
 import Experience from "@/components/sections/experience";
 import Faq from "@/components/sections/faq";
 import FeatureWork from "@/components/sections/feature-work";
@@ -19,6 +20,7 @@ export default function Home() {
           <Services/>
           <Testimonial/>
           <Faq/>
+          <CTA/>
       </main>
     </section>
   );
