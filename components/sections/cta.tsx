@@ -1,10 +1,50 @@
+'use client';
 import FluidSimulation from "../fluid-simulation";
 import TalkButton from "../talk-button";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const CTA = () => {
+  const sectionRef = useRef(null);
+  const cardRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        cardRef.current,
+        { width: "70%", borderRadius: "2rem" },
+        {
+          width: "100%",
+          borderRadius: "1rem",
+          ease: "none",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top-=20px top",
+            end: "+=200%",
+            scrub: 1.5,
+            pin: true,
+            anticipatePin: 1,
+          },
+        }
+      );
+    });
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="bg-cover mx-4 bg-no-repeat bg-[url(/dotted-bg.webp)]">
-      <div className="relative w-full h-full rounded-3xl overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="bg-cover mx-4 bg-no-repeat bg-[url(/dotted-bg.webp)] flex justify-center"
+    >
+      <div
+        ref={cardRef}
+        className="relative h-full overflow-hidden"
+        style={{ willChange: "width" }}
+      >
         <div className="absolute inset-0 z-0">
           <FluidSimulation />
         </div>

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
 import clsx from "clsx";
+import { cn } from "@/lib/utils";
 
 const faqs = [
   {
@@ -40,43 +41,42 @@ export default function FaqAccordion() {
   };
 
   return (
-    <div className="bg-white rounded-2xl overflow-hidden border border-gray-200">
+    <div className="faq-accordion bg-white rounded-2xl overflow-hidden border border-gray-200">
       {faqs.map((faq, index) => {
         const isActive = activeIndex === index;
 
         return (
-          <div
-            key={index}
-            className={clsx(
-              "border-b border-gray-200 last:border-none transition-all duration-300"
-            )}
-          >
-            {/* Entire Row Clickable */}
-            <button
-              onClick={() => toggle(index)}
-              className="w-full flex justify-between items-center text-left px-6 py-6 bg-white hover:bg-white"
-            >
-              <h3 className="text-lg sm:text-xl font-semibold">
-                {faq.question}
-              </h3>
-
-              <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-black text-white">
-                {isActive ? <Minus size={18} /> : <Plus size={18} />}
-              </div>
-            </button>
-
-            {/* Content */}
+          <div className="faq-item" key={index}>
             <div
-              className={clsx(
-                "px-6 overflow-hidden transition-all duration-300 ease-in-out",
-                isActive
-                  ? "max-h-40 pb-6 opacity-100"
-                  : "max-h-0 opacity-0"
+              className={cn(
+                "border-b border-gray-200 last:border-none transition-all duration-300",
               )}
             >
-              <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-                {faq.answer}
-              </p>
+              {/* Entire Row Clickable */}
+              <button
+                onClick={() => toggle(index)}
+                className="w-full flex justify-between items-center text-left px-6 py-6 bg-white hover:bg-white"
+              >
+                <h3 className="text-lg sm:text-xl font-semibold">
+                  {faq.question}
+                </h3>
+
+                <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-black text-white">
+                  {isActive ? <Minus size={18} /> : <Plus size={18} />}
+                </div>
+              </button>
+
+              {/* Content */}
+              <div
+                className={clsx(
+                  "px-6 overflow-hidden transition-all duration-300 ease-in-out",
+                  isActive ? "max-h-40 pb-6 opacity-100" : "max-h-0 opacity-0",
+                )}
+              >
+                <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
+                  {faq.answer}
+                </p>
+              </div>
             </div>
           </div>
         );
