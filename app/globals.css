@@ -38,3 +38,14 @@ body {
 .group:hover .arrow-animate {
   animation: arrowLoop 0.9s cubic-bezier(0.77, 0, 0.175, 1) infinite;
 }
+
+.marquee-track {
+  display: flex;
+  width: max-content; /* Let content define width */
+  min-width: 200%; /* Ensure it's at least 2x container */
+}
+
+.marquee-track span {
+  flex-shrink: 0;
+  padding-right: 2rem; /* Consistent spacing between repeats */
+}

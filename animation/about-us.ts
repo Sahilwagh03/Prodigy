@@ -9,9 +9,6 @@ export const animateAboutUs = (container: HTMLElement) => {
   const number = q(".about-number");
   const image = q(".about-image");
 
-  // ==========================
-  // IMAGE (FROM RIGHT)
-  // ==========================
   gsap.set(image, {
     x: 150,
     opacity: 0,
@@ -21,13 +18,13 @@ export const animateAboutUs = (container: HTMLElement) => {
   gsap.to(image, {
     scrollTrigger: {
       trigger: image,
-      start: "top 85%",
+      start: "top 40%",
       toggleActions: "play none none reverse",
     },
     x: 0,
     opacity: 1,
     filter: "blur(0px)",
-    duration: 1.3,
+    duration: 1,
     ease: "power3.out",
   });
 
@@ -50,9 +47,6 @@ export const animateAboutUs = (container: HTMLElement) => {
     ease: "power3.out",
   });
 
-  // ==========================
-  // PARAGRAPH (BLUR REVEAL)
-  // ==========================
   gsap.set(paragraph, {
     y: 60,
     opacity: 0,
@@ -89,7 +83,7 @@ export const animateAboutUs = (container: HTMLElement) => {
       opacity: 1,
       filter: "blur(0px)",
       duration: 1,
-      ease: "power4.out",
+      ease: "power3.out",
     });
   });
 

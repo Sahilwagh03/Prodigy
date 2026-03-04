@@ -33,8 +33,8 @@ const Experience = () => {
         gsap.set(card4Ref.current, { y: "120vh" });
 
         gsap.set(circle1Ref.current, {
-          scale: 0,
-          opacity: 0,
+          scale: 0.8,
+          opacity: 0.5,
           transformOrigin: "center center",
         });
 

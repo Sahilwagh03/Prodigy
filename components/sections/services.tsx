@@ -6,6 +6,7 @@ import { useRef } from "react";
 import Image from "next/image";
 import { gsap } from "@/lib/gsap";
 import { cn } from "@/lib/utils";
+import { animateServices } from "@/animation/services";
 
 interface Service {
   id: number;
@@ -54,77 +55,29 @@ const Services = () => {
   };
 
   useGSAP(() => {
-    const mm = gsap.matchMedia();
-
-    mm.add("(min-width: 1024px)", () => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: pinRef.current,
-          start: "top-=20px top",
-          end: "+=300%",
-          scrub: 1,
-          pin: true,
-          anticipatePin: 1,
-          invalidateOnRefresh: true,
-        },
-      });
-
-      services.forEach((_, index) => {
-        if (index === 0) {
-          tl.to({}, { duration: 0.5 });
-          return;
-        }
-
-        const label = `service${index}`;
-        tl.addLabel(label);
-
-        tl.to(
-          highlightRef.current,
-          { y: index * ROW_HEIGHT, duration: 0.5, ease: "power2.inOut" },
-          label,
-        );
-
-        tl.to(
-          rowRefs.current[index - 1],
-          { color: "#000000", duration: 0.25, ease: "none" },
-          label,
-        );
-
-        tl.to(
-          rowRefs.current[index],
-          { color: "#ffffff", duration: 0.25, ease: "none" },
-          `${label}+=0.25`,
-        );
-
-        tl.to(
-          imageClipRefs.current[index],
-          { height: "100%", duration: 0.5, ease: "power3.inOut" },
-          label,
-        );
-
-        tl.to(
-          imageInnerRefs.current[index],
-          { y: "0%", duration: 0.5, ease: "power3.inOut" },
-          label,
-        );
-
-        tl.to({}, { duration: index === services.length - 1 ? 1 : 0.5 });
-      });
+    const cleanup = animateServices({
+      pinRef: pinRef.current,
+      highlightRef: highlightRef.current,
+      rowRefs: rowRefs.current,
+      imageClipRefs: imageClipRefs.current,
+      imageInnerRefs: imageInnerRefs.current,
+      servicesLength: services.length,
+      rowHeight: ROW_HEIGHT,
     });
 
-    return () => mm.revert();
-  });
+    return cleanup;
+  }, []);
 
   return (
     <section className="relative pt-8 lg:pt-32.5">
       <div ref={pinRef} className="px-4 max-w-340 mx-auto">
         <div className="flex flex-col">
           <div className="flex flex-col gap-4 lg:flex-row justify-between lg:items-center mb-8 lg:mb-16.25">
-            <h2 className="flex-1 text-[2rem] lg:text-[2.5rem] font-semibold leading-tight tracking-[-.075rem]">
+            <h2 className="services-heading flex-1 text-[2rem] lg:text-[2.5rem] font-semibold leading-tight tracking-[-.075rem]">
               Bold digital innovation and expert execution that drive measurable
               growth
             </h2>
-            <div className="flex-1 flex justify-end w-fit h-full items-end">
+            <div className="services-button flex-1 flex justify-end w-fit h-full items-end">
               <TalkButton className="w-fit h-fit" />
             </div>
           </div>

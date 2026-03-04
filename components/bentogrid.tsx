@@ -115,7 +115,7 @@ function StatCard({
   author,
 }: (typeof stats)[number]) {
   return (
-    <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 flex flex-col justify-between min-h-[240px] sm:min-h-[300px]">
+    <div className="bento-item bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 flex flex-col justify-between min-h-60 sm:min-h-75">
       
       {/* Stat */}
       <div className="flex items-center gap-3 mb-4 sm:mb-6">
@@ -124,12 +124,12 @@ function StatCard({
         </span>
 
         {/* Desktop label */}
-        <span className="hidden sm:block text-base font-semibold text-gray-900 leading-tight max-w-[150px]">
+        <span className="hidden sm:block text-base font-semibold text-gray-900 leading-tight max-w-37.5">
           {label}
         </span>
 
         {/* Mobile label */}
-        <span className="block sm:hidden text-sm font-semibold text-gray-900 leading-tight max-w-[110px]">
+        <span className="block sm:hidden text-sm font-semibold text-gray-900 leading-tight max-w-27.5">
           {shortLabel}
         </span>
       </div>
@@ -165,7 +165,7 @@ function DottedCard({
   author,
 }: (typeof bottomTestimonials)[0]) {
   return (
-    <div className="rounded-2xl sm:rounded-3xl p-6 sm:p-7 bg-white flex flex-col justify-between min-h-[220px] sm:min-h-[260px]">
+    <div className="bento-item rounded-2xl sm:rounded-3xl p-6 sm:p-7 bg-white flex flex-col justify-between min-h-55 sm:min-h-65">
       <div className="flex flex-col gap-3">
         <QuoteIcon />
 
@@ -194,7 +194,7 @@ function DarkCard({
   author,
 }: (typeof bottomTestimonials)[1]) {
   return (
-    <div className="bg-gray-900 rounded-2xl sm:rounded-3xl p-6 sm:p-7 flex flex-col justify-between min-h-[220px] sm:min-h-[260px]">
+    <div className="bento-item bg-gray-900 rounded-2xl sm:rounded-3xl p-6 sm:p-7 flex flex-col justify-between min-h-55 sm:min-h-65">
       <div className="flex flex-col gap-4">
         <QuoteIcon />
 
@@ -220,7 +220,7 @@ function DarkCard({
 
 function ImageCard() {
   return (
-    <div className="rounded-2xl sm:rounded-3xl overflow-hidden min-h-[220px] sm:min-h-[260px] relative">
+    <div className="bento-item rounded-2xl sm:rounded-3xl overflow-hidden min-h-55 sm:min-h-65 relative">
       <Image
         src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80"
         alt="Abstract waves texture"

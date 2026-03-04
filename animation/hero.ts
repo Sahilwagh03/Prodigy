@@ -2,10 +2,15 @@ import { gsap } from "@/lib/gsap";
 
 export const animateHeroElements = (container: HTMLElement) => {
   const q = gsap.utils.selector(container);
+
+  // ✅ Global extra delay (adjust this value)
+  const EXTRA_DELAY = 0.6; // increase if you want more delay
+
   const headings = q(".hero-heading-line");
 
   headings.forEach((el: Element, i: number) => {
     const fromX = i === 0 ? -150 : 150;
+
     gsap.set(el, {
       x: fromX,
       opacity: 0,
@@ -25,7 +30,7 @@ export const animateHeroElements = (container: HTMLElement) => {
       scale: 1,
       duration: 1.4,
       ease: "power4.out",
-      delay: 0.2 + i * 0.1,
+      delay: EXTRA_DELAY + 0.2 + i * 0.1, // 🔥 added here
     });
   });
 
@@ -42,7 +47,7 @@ export const animateHeroElements = (container: HTMLElement) => {
       filter: "blur(0px)",
       duration: 1.1,
       ease: "power4.out",
-      delay: 0.25,
+      delay: EXTRA_DELAY + 0.25, // 🔥 added here
     });
   });
 
@@ -64,6 +69,7 @@ export const animateHeroElements = (container: HTMLElement) => {
       filter: "blur(0px)",
       duration: 1,
       ease: "power4.out",
+      delay: EXTRA_DELAY, // 🔥 added here
     });
   });
 
@@ -85,7 +91,7 @@ export const animateHeroElements = (container: HTMLElement) => {
       filter: "blur(0px)",
       duration: 1,
       ease: "power3.out",
-      delay: 0.2 + i * 0.08,
+      delay: EXTRA_DELAY + 0.2 + i * 0.08, // 🔥 added here
     });
   });
 };
