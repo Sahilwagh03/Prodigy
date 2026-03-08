@@ -66,14 +66,15 @@ const NavMenu = ({ onClose }: NavMenuProps) => {
     <div
       ref={containerRef}
       onClick={animateClose}
-      className="fixed inset-0 z-50 flex items-start justify-end pt-20 pr-6
-  backdrop-blur-xs bg-black/20"
+      className="fixed inset-0 z-50 flex items-start justify-end px-4 pt-20 lg:pr-6
+      backdrop-blur-xs bg-black/20"
     >
       <div
         ref={menuRef}
         onClick={(e) => e.stopPropagation()}
         className="relative w-105 md:w-130 bg-[#e9e9e9] rounded-[40px] p-12 pt-20 shadow-xl"
       >
+        {/* Close Button */}
         <button
           onClick={animateClose}
           className="cursor-pointer absolute top-6 right-6 w-12 h-12 rounded-full bg-[#d9d9d9] flex items-center justify-center hover:bg-[#cfcfcf] transition"
@@ -81,7 +82,7 @@ const NavMenu = ({ onClose }: NavMenuProps) => {
           <X size={24} />
         </button>
 
-        <ul className="text-6xl md:text-7xl font-semibold leading-none space-y-6">
+        <ul className="text-5xl md:text-7xl font-semibold leading-none space-y-6">
           <li className="menu-item">
             <Link href="/" className="text-black underline underline-offset-4">
               Home
