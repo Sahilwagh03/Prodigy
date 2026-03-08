@@ -52,7 +52,7 @@ const HeroSection = () => {
             </div>
 
             {/* Bottom Section */}
-            <div className="flex flex-col gap-6 lg:flex-row w-full justify-between items-center">
+            <div className="flex flex-col gap-6 lg:flex-row w-full justify-between items-center z-10">
               <div className="flex items-start md:items-center lg:items-start justify-end flex-col h-full gap-8 flex-2">
                 <p className="hero-paragraph text-white max-w-120 leading-relaxed font-normal text-[1rem]">
                   We blend creativity with technical expertise to craft
@@ -80,7 +80,7 @@ const HeroSection = () => {
         </div>
 
         {/* Vertical lines */}
-        <div className="absolute -bottom-20 w-full max-w-364 h-full flex justify-between items-stretch">
+        <div className="absolute -bottom-20 w-full max-w-364 h-full z-0 flex justify-between items-stretch">
           <div className="w-px h-full bg-white/15" />
           <div className="w-px h-full bg-white/15" />
           <div className="w-px h-full bg-white/15" />

@@ -83,7 +83,7 @@ export const animateHeroElements = (container: HTMLElement) => {
     gsap.to(el, {
       scrollTrigger: {
         trigger: el,
-        start: "top bottom-=15",
+        start: "top bottom-=10",
         toggleActions: "play none none reverse",
       },
       y: 0,
@@ -91,7 +91,7 @@ export const animateHeroElements = (container: HTMLElement) => {
       filter: "blur(0px)",
       duration: 1,
       ease: "power3.out",
-      delay: EXTRA_DELAY + 0.2 + i * 0.08, // 🔥 added here
+      delay: EXTRA_DELAY + 0.2 + i * 0.08
     });
   });
 };

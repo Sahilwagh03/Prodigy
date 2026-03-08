@@ -53,7 +53,7 @@ const AboutUs = () => {
 
               <div className="about-button">
                 <TalkButton
-                  className="w-fit bg-black text-white"
+                  className="w-fit bg-black text-white hover:bg-black"
                   dotClassName="bg-red-500"
                 />
               </div>
@@ -63,7 +63,7 @@ const AboutUs = () => {
               <div className="text-center flex flex-col items-center">
                 <div className="relative h-[clamp(2.5rem,7vw,9.37rem)] flex items-center">
                   <h3 className="about-number text-[clamp(1.5rem,7vw,9.37rem)] font-semibold leading-none">
-                    15
+                    0
                   </h3>
                   <div
                     className="

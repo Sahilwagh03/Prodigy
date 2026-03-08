@@ -24,7 +24,7 @@ const FeatureWork = () => {
         <div className="px-4">
           <div className="flex flex-col">
             <div className="flex flex-col lg:flex-row gap-7.5 justify-between mb-8 lg:mb-16.25">
-              <div className="flex-1 max-w-142">
+              <div className="flex-1">
                 <h1 className="feature-title text-[clamp(2.15rem,10vw,9.3rem)] lg:tracking-[-.28125rem] leading-[0.9] font-semibold">
                   <span className="line block overflow-hidden whitespace-nowrap">Featured</span>
                   <span className="line block overflow-hidden whitespace-nowrap">Work</span>

@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import BentoGrid from "../bentogrid";
 import { useRef } from "react";
@@ -28,24 +29,29 @@ const Testimonial = () => {
               Designs That Deliver. Clients That Trust.
             </h2>
           </div>
+
           <div className="flex flex-col gap-5">
             <div className="testimonial-card bg-white rounded-2xl lg:rounded-3xl py-8 px-5 sm:px-7 lg:px-10">
               <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 lg:gap-6">
                 <div className="text-lg sm:text-xl lg:text-[1.4rem] font-semibold tracking-[-.02rem] lg:tracking-[-.045rem] leading-snug max-w-full lg:max-w-76">
                   Driving growth with strategies tailored for success
                 </div>
+
                 <div className="flex items-center gap-6 sm:gap-8">
                   <div className="text-4xl sm:text-5xl lg:text-[clamp(2.1rem,5vw,3.75rem)] font-semibold leading-none">
                     85%
                   </div>
+
                   <p className="text-sm sm:text-base max-w-40 sm:max-w-44 text-gray-600">
                     Analyze and monitor business reporting data
                   </p>
                 </div>
+
                 <div className="flex items-center gap-6 sm:gap-8">
                   <div className="text-4xl sm:text-5xl lg:text-[clamp(2.1rem,5vw,3.75rem)] font-semibold leading-none">
                     4.5
                   </div>
+
                   <div className="flex flex-col gap-2">
                     <Image
                       src="https://cdn.prod.website-files.com/691d92c72b801c04cbc08bec/6927de76d882941441c645cc_stars%20(3).svg"
@@ -54,6 +60,7 @@ const Testimonial = () => {
                       height={20}
                       className="w-20 sm:w-24 lg:w-28 h-auto"
                     />
+
                     <p className="text-sm sm:text-base text-gray-600">
                       Top rated company
                     </p>

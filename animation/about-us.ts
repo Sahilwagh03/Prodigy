@@ -90,6 +90,9 @@ export const animateAboutUs = (container: HTMLElement) => {
   number.forEach((el: Element) => {
     const counter = { value: 0 };
 
+    // ensure it starts visually at 0
+    el.textContent = "0";
+
     gsap.to(counter, {
       value: 15,
       duration: 1.8,
@@ -99,14 +102,15 @@ export const animateAboutUs = (container: HTMLElement) => {
         start: "top 85%",
         toggleActions: "play none none reverse",
         onEnter: () => {
-          counter.value = 0; // reset when re-entering
+          counter.value = 0;
+          el.textContent = "0";
         },
       },
       onUpdate: () => {
         el.textContent = Math.round(counter.value).toString();
       },
       onComplete: () => {
-        el.textContent = "15"; // guarantee final value
+        el.textContent = "15";
       },
     });
   });

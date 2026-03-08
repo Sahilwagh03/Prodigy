@@ -78,7 +78,7 @@ const Services = () => {
               growth
             </h2>
             <div className="services-button flex-1 flex justify-end w-fit h-full items-end">
-              <TalkButton className="w-fit h-fit" />
+              <TalkButton className="w-fit h-fit bg-black text-white hover:bg-black" dotClassName="bg-red-500"/>
             </div>
           </div>
 
