@@ -1,7 +1,7 @@
 "use client";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
-import ExperienceCard from "../experience-card";
+import ExperienceCard from "../../../components/experience-card";
 import { gsap } from "@/lib/gsap";
 
 const Experience = () => {

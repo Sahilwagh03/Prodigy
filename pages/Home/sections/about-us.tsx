@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import TalkButton from "../talk-button";
+import TalkButton from "../../../components/talk-button";
 import { Plus } from "lucide-react";
 import { useLayoutEffect, useRef } from "react";
 import { animateAboutUs } from "@/animation/about-us";

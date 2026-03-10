@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { Inter_Tight } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
-import Footer from "@/components/sections/footer";
+import Footer from "@/pages/Home/sections/footer";
 import SmoothScrollProvider from "@/components/smooth-scroll-provider";
+import Navbar from "@/components/Navbar";
 
 const inter = Inter_Tight({
   subsets: ["latin"],
@@ -30,6 +31,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <SmoothScrollProvider>
+            <Navbar />
             {children}
             <Footer />
           </SmoothScrollProvider>

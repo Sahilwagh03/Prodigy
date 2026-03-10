@@ -2,9 +2,9 @@
 
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
-import ServiceItem from "../service-item";
-import TalkButton from "../talk-button";
-import Navbar from "../Navbar";
+import ServiceItem from "../../../components/service-item";
+import TalkButton from "../../../components/talk-button";
+import Navbar from "../../../components/Navbar";
 import { animateHeroElements } from "@/animation/hero";
 
 const HeroSection = () => {
@@ -24,7 +24,7 @@ const HeroSection = () => {
     <div ref={heroRef} className="mt-5 mx-[0.95rem]">
       <div className="relative h-auto lg:h-[110vh] bg-black rounded-4xl overflow-hidden">
         <div className="px-2 w-full lg:px-3.75 pt-[0.2rem] h-20 border-b border-white/20 absolute z-50">
-          <Navbar />
+          <Navbar forceShowNavbar/>
         </div>
 
         {/* Gradient Blobs */}

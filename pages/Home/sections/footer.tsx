@@ -10,9 +10,9 @@ import {
   Dribbble,
 } from "lucide-react";
 import Link from "next/link";
-import TalkButton from "../talk-button";
+import TalkButton from "../../../components/talk-button";
 import Image from "next/image";
-import Logo from "../logo";
+import Logo from "../../../components/logo";
 
 export default function Footer() {
   return (
@@ -48,7 +48,7 @@ export default function Footer() {
           <div className="space-y-8">
             <Link
               href="mailto:prodigy-labs@gmail.com"
-              className="text-3xl lg:text-[2.75rem] font-bold tracking-tight flex gap-2 items-center hover:opacity-70 transition-opacity leading-tight"
+              className="text-[1.65rem] lg:text-[2.75rem] font-bold tracking-tight flex gap-2 items-center hover:opacity-70 transition-opacity leading-tight"
             >
               prodigy-labs@gmail.com
               <ArrowUpRight

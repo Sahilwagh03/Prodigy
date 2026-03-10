@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import BentoGrid from "../bentogrid";
+import BentoGrid from "../../../components/bentogrid";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { animateTestimonial } from "@/animation/testimonial";

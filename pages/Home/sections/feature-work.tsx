@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
-import FeatureCard from "../feature-card";
-import TalkButton from "../talk-button";
+import FeatureCard from "../../../components/feature-card";
+import TalkButton from "../../../components/talk-button";
 import { animateFeatureWork } from "@/animation/feature";
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "@/lib/gsap";

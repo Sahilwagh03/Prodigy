@@ -1,6 +1,6 @@
 "use client";
 
-import TalkButton from "../talk-button";
+import TalkButton from "../../../components/talk-button";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import Image from "next/image";

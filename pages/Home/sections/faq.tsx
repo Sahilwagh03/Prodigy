@@ -1,7 +1,7 @@
 'use client';
 import { useRef } from "react";
-import TalkButton from "../talk-button";
-import FaqAccordion from "../faq-accordion";
+import TalkButton from "../../../components/talk-button";
+import FaqAccordion from "../../../components/faq-accordion";
 import { animateFaq } from "@/animation/faq";
 import { useGSAP } from "@gsap/react";
 
