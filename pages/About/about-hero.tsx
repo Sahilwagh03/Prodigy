@@ -18,7 +18,7 @@ const AboutHeroSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="w-full h-screen flex items-center justify-center px-4 bg-neutral-100"
+      className="w-full max-w-340 mx-auto h-screen flex items-center justify-center px-4"
     >
       <div className="grid grid-cols-[0.25fr_1fr_0.25fr] w-full items-center">
         <div className="font-semibold uppercase text-sm tracking-wider">
@@ -53,16 +53,6 @@ const AboutHeroSection = () => {
             />
           </div>
 
-          <div className="hero-image absolute -bottom-28 -left-10 w-60 h-40 rounded-2xl overflow-hidden z-10">
-            <Image
-              src="https://images.unsplash.com/photo-1681183133804-2bbd34233e59?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              alt="portrait"
-              fill
-              className="object-cover"
-            />
-          </div>
-
-          {/* TEXT */}
           <h1 className="relative z-20 text-center text-[clamp(3rem,10vw,14rem)] font-semibold leading-[1.05] tracking-[-0.4rem] text-white mix-blend-difference">
             <span className="block overflow-hidden">
               <span className="about-line block whitespace-nowrap">About</span>
