@@ -21,6 +21,7 @@ export const animateAboutCore = (container: HTMLElement | null) => {
     backgroundSize: "0% 100%",
     WebkitBackgroundClip: "text",
     color: "rgba(0,0,0,0.25)",
+    display: "inline-block",
   });
 
   // Build a timeline so each line fully completes before the next begins
