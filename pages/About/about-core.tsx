@@ -34,14 +34,14 @@ const AboutCore = () => {
           </p>
         </div>
         <div className="flex justify-between gap-6 pt-6 lg:pt-12">
-          <div className="hidden lg:flex lg:w-[45%] relative rounded-2xl overflow-hidden">
-            <Image src='/about-core.jpeg' alt="About Core" fill className="object-cover object-center" />
+          <div className="hidden lg:flex lg:w-[45%] relative">
+            <Image src='/about-core.jpeg' alt="About Core" fill className="max-w-xs rounded-2xl object-cover object-center" />
           </div>
           <div className="w-full border-t border-[#4444] lg:w-[55%]">
             <div className="pt-6 lg:flex grid md:grid-cols-2 lg:flex-col gap-6 lg:gap-12">
               {
                 coreDetails.map((coreData)=>(
-                  <AboutCoreItem {...coreData}/>
+                  <AboutCoreItem key={coreData.matrix} {...coreData}/>
                 ))
               }
             </div>

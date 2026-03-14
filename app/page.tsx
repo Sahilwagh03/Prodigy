@@ -20,7 +20,6 @@ export default function Home() {
           <Services/>
           <Testimonial/>
           <Faq/>
-          <CTA/>
       </main>
     </section>
   );

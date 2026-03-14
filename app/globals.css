@@ -50,3 +50,51 @@ body {
   flex-shrink: 0;
   padding-right: 2rem; /* Consistent spacing between repeats */
 }
+
+.services-wrapper {
+  will-change: transform;
+  transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(-84deg)
+    rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  transform-style: preserve-3d;
+  transform-origin: 50%;
+  flex-flow: column;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.service-content {
+  backface-visibility: hidden;
+  transform-origin: 50%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.service-1 {
+  transform: translate3d(-50%, -50%, 0) translate3d(0, 0, 362.2px) rotateX(0);
+}
+
+.service-2{
+  transform: translate3d(-50%, -50%, 0)translate3d(0, 99.7807px, 347.977px)rotateX(-16deg);
+}
+
+.service-3{
+  transform:translate3d(-50%, -50%, 0)translate3d(0, 191.831px, 306.993px)rotateX(-32deg);
+}
+
+.service-4{
+  transform:translate3d(-50%, -50%, 0)translate3d(0, 269.018px, 242.225px)rotateX(-48deg);
+}
+
+.service-5{
+  transform: translate3d(-50%, -50%, 0)translate3d(0, 325.363px, 158.69px)rotateX(-64deg);
+}
+
+.service-6{
+  transform:translate3d(-50%, -50%, 0)translate3d(0, 356.5px, 62.8606px)rotateX(-80deg);
+}

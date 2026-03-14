@@ -46,7 +46,7 @@ const CTA = () => {
     >
       <div
         ref={cardRef}
-        className="relative h-full overflow-hidden rounded-4xl"
+        className="max-w-340 mx-auto relative h-full overflow-hidden rounded-4xl"
         style={{ willChange: "width" }}
       >
         <div className="absolute inset-0 z-0">
