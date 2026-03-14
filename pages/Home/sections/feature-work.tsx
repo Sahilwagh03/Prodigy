@@ -3,13 +3,14 @@ import Image from "next/image";
 import FeatureCard from "../../../components/feature-card";
 import TalkButton from "../../../components/talk-button";
 import { animateFeatureWork } from "@/animation/feature";
-import { useLayoutEffect, useRef } from "react";
+import { useRef } from "react";
 import { gsap } from "@/lib/gsap";
+import { useGSAP } from "@gsap/react";
 
 const FeatureWork = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  useLayoutEffect(() => {
+  useGSAP(() => {
     if (!sectionRef.current) return;
 
     const ctx = gsap.context(() => {

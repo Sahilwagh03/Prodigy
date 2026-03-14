@@ -2,14 +2,15 @@
 import Image from "next/image";
 import TalkButton from "../../../components/talk-button";
 import { Plus } from "lucide-react";
-import { useLayoutEffect, useRef } from "react";
+import { useRef } from "react";
 import { animateAboutUs } from "@/animation/about-us";
 import { gsap } from "@/lib/gsap";
+import { useGSAP } from "@gsap/react";
 
 const AboutUs = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  useLayoutEffect(() => {
+  useGSAP(() => {
     if (!sectionRef.current) return;
 
     const ctx = gsap.context(() => {

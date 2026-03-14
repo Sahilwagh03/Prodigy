@@ -1,13 +1,14 @@
 "use client";
 import { animatePartners } from "@/animation/partners";
 import PartnerCard from "../../../components/partner-card";
-import { useLayoutEffect, useRef } from "react";
+import { useRef } from "react";
 import { gsap } from "@/lib/gsap";
+import { useGSAP } from "@gsap/react";
 
 const Partners = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
-  useLayoutEffect(() => {
+  useGSAP(() => {
     if (!sectionRef.current) return;
 
     const ctx = gsap.context(() => {

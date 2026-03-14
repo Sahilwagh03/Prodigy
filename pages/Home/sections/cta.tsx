@@ -3,9 +3,7 @@ import FluidSimulation from "../../../components/fluid-simulation";
 import TalkButton from "../../../components/talk-button";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
-import { gsap , ScrollTrigger } from "@/lib/gsap";
-
-gsap.registerPlugin(ScrollTrigger);
+import { gsap  } from "@/lib/gsap";
 
 const CTA = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null);

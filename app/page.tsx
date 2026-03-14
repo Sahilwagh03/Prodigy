@@ -19,6 +19,7 @@ export default function Home() {
           <FeatureWork/>
           <Services/>
           <Testimonial/>
+          <CTA/>
           <Faq/>
       </main>
     </section>

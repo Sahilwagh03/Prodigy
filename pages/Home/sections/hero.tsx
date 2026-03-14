@@ -1,16 +1,17 @@
 "use client";
 
-import { useLayoutEffect, useRef } from "react";
+import { useRef } from "react";
 import { gsap } from "gsap";
 import ServiceItem from "../../../components/service-item";
 import TalkButton from "../../../components/talk-button";
 import Navbar from "../../../components/Navbar";
 import { animateHeroElements } from "@/animation/hero";
+import { useGSAP } from "@gsap/react";
 
 const HeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);
 
-  useLayoutEffect(() => {
+  useGSAP(() => {
     if (!heroRef.current) return;
 
     const ctx = gsap.context(() => {

@@ -23,21 +23,19 @@ const Navbar = ({ forceShowNavbar = false }: NavbarProps) => {
   }
 
   return (
-    <header
+    <div
       className={cn(
         "relative w-full grid grid-cols-2 lg:auto-cols-[1fr] lg:grid-cols-[1fr_1fr_0.25fr] h-full items-center",
         !isForced && "py-4 px-4 border-b border-[#4444]"
       )}
     >
       <div className="flex justify-start h-full items-center logo">
-        <Link href='/'>
         <Logo
           className={cn(
             "w-fit h-10",
             isForced ? "text-white" : "text-black"
           )}
         />
-        </Link>
       </div>
 
       <nav
@@ -87,7 +85,7 @@ const Navbar = ({ forceShowNavbar = false }: NavbarProps) => {
       </div>
 
       {open && <NavMenu onClose={() => setOpen(false)} />}
-    </header>
+    </div>
   );
 };
 

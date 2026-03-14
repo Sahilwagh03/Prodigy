@@ -3,6 +3,7 @@ import AboutCore from "@/pages/About/about-core"
 import AboutHeroSection from "@/pages/About/about-hero"
 import AboutImageSeparator from "@/pages/About/about-image-separator"
 import AboutServices from "@/pages/About/about-services"
+import CTA from "@/pages/Home/sections/cta"
 
 
 const AboutPage = () => {
@@ -13,6 +14,7 @@ const AboutPage = () => {
         <AboutCore/>
         <AboutServices/>
         <AboutBento/>
+        <CTA/>
     </div>
   )
 }
