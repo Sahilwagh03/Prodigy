@@ -18,15 +18,15 @@ const AboutHeroSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="w-full max-w-340 mx-auto h-screen flex items-center justify-center px-4"
+      className="w-full max-w-340 mx-auto lg:h-screen flex items-center justify-center px-4 py-12 lg:py-0"
     >
-      <div className="grid grid-cols-[0.25fr_1fr_0.25fr] w-full items-center">
+      <div className="grid grid-cols-1 lg:grid-cols-[0.25fr_1fr_0.25fr] w-full items-center">
         <div className="font-semibold uppercase text-sm tracking-wider">
           Since 2010
         </div>
 
         <div className="relative flex justify-center items-center">
-          <div className="hero-image absolute -top-16 left-24 w-60 h-40 rounded-2xl overflow-hidden z-10">
+          <div className="hidden lg:flex hero-image absolute -top-16 left-24 w-60 h-40 rounded-2xl overflow-hidden z-10">
             <Image
               src="https://images.unsplash.com/photo-1680536663869-019bd6ec9fec"
               alt="product"
@@ -35,7 +35,7 @@ const AboutHeroSection = () => {
             />
           </div>
 
-          <div className="hero-image absolute -top-28 right-10 w-60 h-40 rounded-2xl overflow-hidden z-10">
+          <div className="hidden lg:flex hero-image absolute -top-28 right-10 w-60 h-40 rounded-2xl overflow-hidden z-10">
             <Image
               src="https://images.unsplash.com/photo-1707836868495-3307d371aba4"
               alt="chair"
@@ -44,7 +44,7 @@ const AboutHeroSection = () => {
             />
           </div>
 
-          <div className="hero-image absolute -bottom-20 right-5 w-60 h-40 rounded-2xl overflow-hidden z-10">
+          <div className="hidden lg:flex hero-image absolute -bottom-20 right-5 w-60 h-40 rounded-2xl overflow-hidden z-10">
             <Image
               src="https://images.unsplash.com/photo-1697301439949-798044084e15"
               alt="portrait"
@@ -53,7 +53,7 @@ const AboutHeroSection = () => {
             />
           </div>
 
-          <h1 className="relative z-20 text-center text-[clamp(3rem,10vw,14rem)] font-semibold leading-[1.05] tracking-[-0.4rem] text-white mix-blend-difference">
+          <h1 className="relative z-20 text-center text-[clamp(3rem,14vw,6rem)] md:text-[clamp(5rem,10vw,14rem)] tracking-[-0.08em] md:tracking-[-0.4rem] font-semibold leading-[1.05] text-white mix-blend-difference">
             <span className="block overflow-hidden">
               <span className="about-line block whitespace-nowrap">About</span>
             </span>
