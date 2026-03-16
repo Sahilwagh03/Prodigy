@@ -1,7 +1,4 @@
 import { gsap, SplitText } from "@/lib/gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 export const animateServiceHero = (container: HTMLElement | null) => {
   if (!container) return;

@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const ServicesHighlight = () => {
   return (
-    <section className="bg-[url(/dotted-bg.webp)] bg-no-repeat bg-position-[50%_0] bg-size-[1875px] lg:bg-cover lg:bg-center pb-6 lg:pb-12">
+    <section className="bg-[url(/dotted-bg.webp)] bg-no-repeat bg-position-[50%_0] bg-size-[1875px] lg:bg-cover lg:bg-center">
       <div className="max-w-340 mx-auto px-4">
         <div className="flex flex-col gap-6 lg:gap-10 justify-center items-center">
           <div className="max-w-2xl text-center">
