@@ -4,6 +4,7 @@ import Link from "next/link";
 import { X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
+import { usePathname, useRouter } from "next/navigation";
 
 interface NavMenuProps {
   onClose?: () => void;
@@ -13,6 +14,9 @@ const NavMenu = ({ onClose }: NavMenuProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
   const [closing, setClosing] = useState(false);
+
+  const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     const ctx = gsap.context((self) => {
@@ -30,7 +34,7 @@ const NavMenu = ({ onClose }: NavMenuProps) => {
           opacity: 1,
           duration: 0.6,
           ease: "power3.out",
-        },
+        }
       );
 
       gsap.from(items, {
@@ -46,7 +50,8 @@ const NavMenu = ({ onClose }: NavMenuProps) => {
     return () => ctx.revert();
   }, []);
 
-  const animateClose = () => {
+  // 🔥 SAME animation (unchanged)
+  const animateClose = (callback?: () => void) => {
     if (closing) return;
     setClosing(true);
 
@@ -58,14 +63,32 @@ const NavMenu = ({ onClose }: NavMenuProps) => {
       ease: "power3.in",
       onComplete: () => {
         onClose?.();
+        callback?.(); // 👈 run navigation AFTER animation
       },
     });
   };
 
+  // 🔥 handle link click (no glitch)
+  const handleLinkClick = (
+    e: React.MouseEvent,
+    href: string
+  ) => {
+    e.preventDefault(); // stop instant navigation
+    animateClose(() => {
+      router.push(href);
+    });
+  };
+
+  // 🔥 active link styles
+  const getLinkClass = (path: string) =>
+    pathname === path
+      ? "text-black underline underline-offset-4"
+      : "text-gray-400 hover:text-black transition";
+
   return (
     <div
       ref={containerRef}
-      onClick={animateClose}
+      onClick={() => animateClose()}
       className="fixed inset-0 z-50 flex items-start justify-end px-4 pt-20 lg:pr-6
       backdrop-blur-xs bg-black/20"
     >
@@ -76,7 +99,7 @@ const NavMenu = ({ onClose }: NavMenuProps) => {
       >
         {/* Close Button */}
         <button
-          onClick={animateClose}
+          onClick={() => animateClose()}
           className="cursor-pointer absolute top-6 right-6 w-12 h-12 rounded-full bg-[#d9d9d9] flex items-center justify-center hover:bg-[#cfcfcf] transition"
         >
           <X size={24} />
@@ -84,7 +107,11 @@ const NavMenu = ({ onClose }: NavMenuProps) => {
 
         <ul className="text-5xl md:text-7xl font-semibold leading-none space-y-6">
           <li className="menu-item">
-            <Link href="/" className="text-black underline underline-offset-4">
+            <Link
+              href="/"
+              onClick={(e) => handleLinkClick(e, "/")}
+              className={getLinkClass("/")}
+            >
               Home
             </Link>
           </li>
@@ -92,7 +119,8 @@ const NavMenu = ({ onClose }: NavMenuProps) => {
           <li className="menu-item">
             <Link
               href="/about"
-              className="text-gray-400 hover:text-black transition"
+              onClick={(e) => handleLinkClick(e, "/about")}
+              className={getLinkClass("/about")}
             >
               About
             </Link>
@@ -101,7 +129,8 @@ const NavMenu = ({ onClose }: NavMenuProps) => {
           <li className="menu-item">
             <Link
               href="/services"
-              className="text-gray-400 hover:text-black transition"
+              onClick={(e) => handleLinkClick(e, "/services")}
+              className={getLinkClass("/services")}
             >
               Service
             </Link>
@@ -110,7 +139,8 @@ const NavMenu = ({ onClose }: NavMenuProps) => {
           <li className="menu-item">
             <Link
               href="/contact"
-              className="text-gray-400 hover:text-black transition"
+              onClick={(e) => handleLinkClick(e, "/contact")}
+              className={getLinkClass("/contact")}
             >
               Contact
             </Link>
