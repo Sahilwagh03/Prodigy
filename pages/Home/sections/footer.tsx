@@ -75,7 +75,6 @@ export default function Footer() {
                 <ul className="space-y-3">
                   <li><Link href="/">Home</Link></li>
                   <li><Link href="/about">About</Link></li>
-                  <li><Link href="/projects">Projects</Link></li>
                 </ul>
               </div>
 
@@ -92,7 +91,7 @@ export default function Footer() {
               <div>
                 <p className="mb-4 font-semibold uppercase">Utility Pages</p>
                 <ul className="space-y-3">
-                  <li><Link href="/licenses">Licenses</Link></li>
+                  <li><Link href="/">Licenses</Link></li>
                   <li><Link href="/not-found">404 Page</Link></li>
                 </ul>
               </div>
