@@ -3,95 +3,104 @@ import { gsap } from "@/lib/gsap";
 export const animateHeroElements = (container: HTMLElement) => {
   const q = gsap.utils.selector(container);
 
-  // ✅ Global extra delay (adjust this value)
-  const EXTRA_DELAY = 0.6; // increase if you want more delay
+  const tl = gsap.timeline({
+    defaults: {
+      ease: "power4.out",
+    },
+  });
 
+  // 🔥 HEADINGS (staggered left/right)
   const headings = q(".hero-heading-line");
 
   headings.forEach((el: Element, i: number) => {
-    const fromX = i === 0 ? -150 : 150;
+    const fromX = i === 0 ? -120 : 120;
 
     gsap.set(el, {
       x: fromX,
       opacity: 0,
-      filter: "blur(14px)",
-      scale: 1.05,
+      filter: "blur(12px)",
+      scale: 1.04,
     });
 
-    gsap.to(el, {
-      scrollTrigger: {
-        trigger: el,
-        start: "top bottom-=120",
-        toggleActions: "play none none reverse",
+    tl.to(
+      el,
+      {
+        x: 0,
+        opacity: 1,
+        filter: "blur(0px)",
+        scale: 1,
+        duration: 1.1,
       },
-      x: 0,
-      opacity: 1,
-      filter: "blur(0px)",
-      scale: 1,
-      duration: 1.4,
-      ease: "power4.out",
-      delay: EXTRA_DELAY + 0.2 + i * 0.1, // 🔥 added here
-    });
+      i * 0.08 // 🔥 smooth stagger (no big delay)
+    );
   });
 
+  // 🔥 PARAGRAPH
   q(".hero-paragraph").forEach((el: Element) => {
-    gsap.set(el, {
-      y: 60,
-      opacity: 0,
-      filter: "blur(14px)",
-    });
-
-    gsap.to(el, {
-      y: 0,
-      opacity: 1,
-      filter: "blur(0px)",
-      duration: 1.1,
-      ease: "power4.out",
-      delay: EXTRA_DELAY + 0.25, // 🔥 added here
-    });
-  });
-
-  q(".hero-button").forEach((el: Element) => {
-    gsap.set(el, {
-      y: 50,
-      opacity: 0,
-      filter: "blur(14px)",
-    });
-
-    gsap.to(el, {
-      scrollTrigger: {
-        trigger: el,
-        start: "top bottom-=80",
-        toggleActions: "play none none reverse",
-      },
-      y: 0,
-      opacity: 1,
-      filter: "blur(0px)",
-      duration: 1,
-      ease: "power4.out",
-      delay: EXTRA_DELAY, // 🔥 added here
-    });
-  });
-
-  q(".hero-service").forEach((el: Element, i: number) => {
     gsap.set(el, {
       y: 40,
       opacity: 0,
-      filter: "blur(14px)",
+      filter: "blur(12px)",
     });
 
-    gsap.to(el, {
-      scrollTrigger: {
-        trigger: el,
-        start: "top bottom-=10",
-        toggleActions: "play none none reverse",
+    tl.to(
+      el,
+      {
+        y: 0,
+        opacity: 1,
+        filter: "blur(0px)",
+        duration: 0.9,
       },
-      y: 0,
-      opacity: 1,
-      filter: "blur(0px)",
-      duration: 1,
-      ease: "power3.out",
-      delay: EXTRA_DELAY + 0.2 + i * 0.08
-    });
+      "-=0.6" // overlaps nicely with headings
+    );
   });
+
+  // 🔥 BUTTON
+  q(".hero-button").forEach((el: Element) => {
+    gsap.set(el, {
+      y: 40,
+      opacity: 0,
+      filter: "blur(12px)",
+    });
+
+    tl.to(
+      el,
+      {
+        y: 0,
+        opacity: 1,
+        filter: "blur(0px)",
+        duration: 0.8,
+      },
+      "-=0.5"
+    );
+  });
+
+  // 🔥 SERVICES (cards/icons etc)
+  q(".hero-service").forEach((el: Element, i: number) => {
+    gsap.set(el, {
+      y: 30,
+      opacity: 0,
+      filter: "blur(10px)",
+    });
+
+    tl.to(
+      el,
+      {
+        y: 0,
+        opacity: 1,
+        filter: "blur(0px)",
+        duration: 0.8,
+      },
+      "-=0.4" + i * 0.06 // slight stagger inside overlap
+    );
+  });
+
+  // 🔥 OPTIONAL: Scroll trigger for entire timeline
+  gsap.timeline({
+    scrollTrigger: {
+      trigger: container,
+      start: "top bottom-=100",
+      toggleActions: "play none none reverse",
+    },
+  }).add(tl);
 };

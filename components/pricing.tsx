@@ -6,49 +6,25 @@ import { Rocket, Trophy, Crown, Check } from "lucide-react";
 export default function Pricing() {
   const [yearly, setYearly] = useState(false);
 
+  // ✅ Fixed one-time pricing (toggle doesn't affect now)
   const pricing = {
-    basic: yearly ? 290 : 29,
-    standard: yearly ? 490 : 49,
-    premium: yearly ? 990 : 99,
+    basic: 8000,
+    standard: 15000,
+    premium: 22000,
   };
 
   return (
     <section className="w-full py-12 lg:py-24">
       <div className="max-w-340 mx-auto px-2">
-
         <div className="text-center mb-6 lg:mb-12 max-w-3xl mx-auto">
           <h2 className="text-[clamp(1.6rem,3vw,2.5rem)] leading-tight tracking-[-.05rem] font-semibold">
             Customized packages perfectly suited to your project's requirements
           </h2>
-
-          <div className="flex items-center justify-center gap-4 mt-8">
-            <span className={!yearly ? "font-medium" : "text-gray-500"}>
-              Monthly
-            </span>
-
-            <button
-              onClick={() => setYearly(!yearly)}
-              className={`relative w-14 h-7 rounded-full transition ${
-                yearly ? "bg-orange-400" : "bg-gray-300"
-              }`}
-            >
-              <span
-                className={`absolute top-1 left-1 w-5 h-5 bg-white rounded-full transition-transform ${
-                  yearly ? "translate-x-7" : ""
-                }`}
-              />
-            </button>
-
-            <span className={yearly ? "font-medium" : "text-gray-500"}>
-              Yearly
-            </span>
-          </div>
         </div>
 
         {/* Pricing Cards */}
         <div className="bg-white rounded-3xl p-2 lg:p-6">
           <div className="grid lg:grid-cols-3 gap-4 lg:gap-0 rounded-2xl overflow-hidden">
-
             {/* BASIC */}
             <div className="p-6 lg:p-10 bg-white flex flex-col justify-between">
               <div>
@@ -60,24 +36,20 @@ export default function Pricing() {
                 </div>
 
                 <h2 className="text-4xl font-semibold mb-2">
-                  ${pricing.basic}
-                  <span className="text-sm text-gray-500">
-                    {" "}
-                    / {yearly ? "Year" : "Month"}
-                  </span>
+                  ₹{pricing.basic.toLocaleString()}
                 </h2>
 
                 <p className="text-gray-500 mb-8">
-                  Ideal for simple portfolios with a clean, responsive layout.
+                  Ideal for simple portfolios or personal websites.
                 </p>
 
                 <ul className="space-y-4 text-gray-700">
                   {[
-                    "Single-page responsive portfolio",
-                    "Clean template customization",
-                    "Basic image gallery setup",
-                    "Standard speed optimization",
-                    "Email support only",
+                    "Single-page responsive website",
+                    "Clean modern UI design",
+                    "Basic image/gallery setup",
+                    "Mobile optimization",
+                    "Email support",
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-3">
                       <Check size={16} />
@@ -95,7 +67,6 @@ export default function Pricing() {
 
             {/* DARK CONTAINER */}
             <div className="gap-8 lg:gap-0 lg:col-span-2 text-white grid md:grid-cols-2 lg:rounded-2xl overflow-hidden">
-
               {/* STANDARD */}
               <div className="p-6 lg:p-10 bg-black flex flex-col rounded-2xl lg:rounded-none justify-between">
                 <div>
@@ -107,24 +78,20 @@ export default function Pricing() {
                   </div>
 
                   <h2 className="text-4xl font-semibold mb-2">
-                    ${pricing.standard}
-                    <span className="text-sm text-gray-400">
-                      {" "}
-                      / {yearly ? "Year" : "Month"}
-                    </span>
+                    ₹{pricing.standard.toLocaleString()}
                   </h2>
 
                   <p className="text-gray-400 mb-8">
-                    Great for growing brands needing multi-page layouts and customization.
+                    Perfect for startups and growing brands.
                   </p>
 
                   <ul className="space-y-4 text-gray-300">
                     {[
-                      "Multi-page responsive portfolio",
-                      "Advanced design customization",
-                      "Interactive gallery & Sliders",
-                      "SEO-friendly structure setup",
-                      "Priority email support",
+                      "Multi-page website (3–5 pages)",
+                      "Custom UI/UX design",
+                      "Interactive sections & sliders",
+                      "SEO-ready structure",
+                      "Priority support",
                     ].map((item) => (
                       <li key={item} className="flex items-center gap-3">
                         <Check size={16} />
@@ -151,24 +118,21 @@ export default function Pricing() {
                   </div>
 
                   <h2 className="text-4xl font-semibold mb-2">
-                    ${pricing.premium}
-                    <span className="text-sm text-gray-400">
-                      {" "}
-                      / {yearly ? "Year" : "Month"}
-                    </span>
+                    ₹{pricing.premium.toLocaleString()}
                   </h2>
 
                   <p className="text-gray-400 mb-8">
-                    Best for businesses needing custom design and full optimization.
+                    Best for businesses needing custom design and high
+                    performance.
                   </p>
 
                   <ul className="space-y-4 text-gray-300">
                     {[
-                      "Fully custom portfolio design",
-                      "Animated sections & Micro-interactions",
-                      "High-speed optimization + CDN setup",
-                      "On-page SEO + Content placement",
-                      "Support with WhatsApp assistance",
+                      "Fully custom website design",
+                      "Animations & micro-interactions (GSAP)",
+                      "Performance optimization",
+                      "SEO + content structure",
+                      "WhatsApp + priority support",
                     ].map((item) => (
                       <li key={item} className="flex items-center gap-3">
                         <Check size={16} />
@@ -183,7 +147,6 @@ export default function Pricing() {
                   <span className="w-2 h-2 bg-red-500 rounded-full" />
                 </button>
               </div>
-
             </div>
           </div>
         </div>
