@@ -13,7 +13,6 @@ const ExperienceCard = forwardRef<HTMLDivElement, ExperienceCardProps>(
     return (
       <div
         className={`group relative bg-white px-10 py-13 rounded-2xl z-10 cursor-pointer 
-        hover:bg-black hover:text-white 
         transition-colors duration-300 ease-out 
         overflow-hidden ${className}`}
         ref={ref}
@@ -21,12 +20,12 @@ const ExperienceCard = forwardRef<HTMLDivElement, ExperienceCardProps>(
         <div className="max-w-[21.6rem] flex flex-col gap-12">
           <div className="max-w-[10.2rem] text-[1.25rem] leading-normal tracking-[-.0375rem] font-semibold min-h-12">{title}</div>
 
-          <p className="text-[1rem] text-[#4d4d4d] group-hover:text-white transition-colors duration-300">
+          <p className="text-[1rem] text-[#4d4d4d] transition-colors duration-300">
             {description}
           </p>
         </div>
 
-        <div
+        {/* <div
           className="
           absolute top-5 right-5
           w-38 h-28.25
@@ -42,7 +41,7 @@ const ExperienceCard = forwardRef<HTMLDivElement, ExperienceCardProps>(
             backgroundImage:
               "url(https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=800&auto=format&fit=crop)",
           }}
-        />
+        /> */}
 
         {/* Number Circle */}
         <div className="absolute inset-[1.25rem_1.25rem_auto_auto] z-20">

@@ -70,7 +70,7 @@ const Experience = () => {
             scrub: 1,
             pin: sectionRef.current,
             anticipatePin: 1,
-            invalidateOnRefresh: true, 
+            invalidateOnRefresh: true,
           },
         });
 
@@ -158,15 +158,14 @@ const Experience = () => {
               <ExperienceCard
                 ref={card1Ref}
                 number="01"
-                title="Web & Software Development"
-                description="We engineer scalable digital products through performance, reliability and modern technology."
+                title="Brand identity design strategy"
+                description="We build strong brand foundations through research, positioning and clear visual direction."
               />
-
               <ExperienceCard
                 ref={card2Ref}
                 number="02"
-                title="Brand identity design strategy"
-                description="We build strong brand foundations through research, positioning and clear visual direction."
+                title="Web & Software Development"
+                description="We engineer scalable digital products through performance, reliability and modern technology."
                 className="lg:ml-16"
               />
             </div>
@@ -174,8 +173,8 @@ const Experience = () => {
               <ExperienceCard
                 ref={card3Ref}
                 number="03"
-                title="AI & Automation Systems"
-                description="We implement intelligent automation systems with precision and efficiency."
+                title="AI Avatar Video Creation"
+                description="We create realistic AI avatars for branding, content and engaging digital experiences."
               />
 
               <ExperienceCard

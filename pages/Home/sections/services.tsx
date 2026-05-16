@@ -17,13 +17,13 @@ interface Service {
 const services: Service[] = [
   {
     id: 1,
-    title: "Interactive design experiences",
+    title: "Video Editing",
     image:
       "https://images.unsplash.com/photo-1707836885248-2b0e3cb0c76e?q=80&w=1064&auto=format&fit=crop&ixlib=rb-4.1.0",
   },
   {
     id: 2,
-    title: "Motion graphics production",
+    title: "AI Avatar Creation",
     image:
       "https://images.unsplash.com/photo-1558655146-364adaf1fcc9?q=80&w=1064&auto=format&fit=crop",
   },
