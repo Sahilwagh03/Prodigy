@@ -1,47 +1,148 @@
 "use client";
 
-import { Play } from "lucide-react";
+import { useState, useRef, useEffect } from "react";
+import { Play, Pause } from "lucide-react";
 
 const reels = [
   {
     id: 1,
-    video: "/videos/reel-1.mp4",
+    video: "https://res.cloudinary.com/dmrjruik5/video/upload/v1783082386/EOT_Finalnew_aluaq2.mp4",
+    thumbnail: "https://res.cloudinary.com/dmrjruik5/video/upload/f_auto,q_auto,w_600,h_1066,c_fill,so_4.2/v1783082386/EOT_Finalnew_aluaq2.jpg",
     title: "Brand Growth Campaign",
     category: "Social Media",
   },
   {
     id: 2,
-    video: "/videos/reel-2.mp4",
-    title: "Luxury Product Ad",
+    video: "https://res.cloudinary.com/dmrjruik5/video/upload/v1783082393/Niharika_z12uav.mp4",
+    thumbnail: "https://res.cloudinary.com/dmrjruik5/video/upload/f_auto,q_auto,w_600,h_1066,c_fill,so_2.2/v1783082393/Niharika_z12uav.jpg",
+    title: "Education",
     category: "Performance Marketing",
   },
   {
     id: 3,
-    video: "/videos/reel-3.mp4",
-    title: "Fitness Promotion",
+    video: "https://res.cloudinary.com/dmrjruik5/video/upload/v1783082399/Aparna_lstudu.mp4",
+    thumbnail: "https://res.cloudinary.com/dmrjruik5/video/upload/f_auto,q_auto,w_600,h_1066,c_fill,so_13.84/v1783082399/Aparna_lstudu.jpg",
+    title: "Service and Product",
     category: "Content Creation",
   },
   {
     id: 4,
-    video: "/videos/reel-4.mp4",
-    title: "Restaurant Launch",
+    video: "https://res.cloudinary.com/dmrjruik5/video/upload/v1783082642/Niharika_1_mhxmgk.mp4",
+    thumbnail: "https://res.cloudinary.com/dmrjruik5/video/upload/f_auto,q_auto,w_600,h_1066,c_fill,so_50.67/v1783082642/Niharika_1_mhxmgk.jpg",
+    title: "Travel",
     category: "UGC Strategy",
-  },
-  {
-    id: 5,
-    video: "/videos/reel-5.mp4",
-    title: "Fashion Reel Edit",
-    category: "Video Production",
-  },
-  {
-    id: 6,
-    video: "/videos/reel-6.mp4",
-    title: "Startup Ad Campaign",
-    category: "Paid Ads",
   },
 ];
 
+// Helper to construct optimized Cloudinary thumbnail URL from video URL
+// TIP: If you want to use a specific timestamp for thumbnail, you can insert "so_3" (e.g. at 3s)
+const getThumbnailUrl = (videoUrl: string) => {
+  return videoUrl
+    .replace("/video/upload/", "/video/upload/f_auto,q_auto,w_600,h_1066,c_fill/")
+    .replace(/\.mp4$/, ".jpg");
+};
+
+interface ReelCardProps {
+  reel: typeof reels[0];
+  isActive: boolean;
+  onPlay: () => void;
+  onPause: () => void;
+}
+
+function ReelCard({ reel, isActive, onPlay, onPause }: ReelCardProps) {
+  const [hasLoaded, setHasLoaded] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const thumbnailUrl = reel.thumbnail || getThumbnailUrl(reel.video);
+
+  const handlePlayPause = () => {
+    if (!hasLoaded) {
+      setHasLoaded(true);
+      onPlay();
+    } else {
+      if (isActive) {
+        onPause();
+      } else {
+        onPlay();
+      }
+    }
+  };
+
+  // Preload video if it becomes active from external source
+  useEffect(() => {
+    if (isActive) {
+      setHasLoaded(true);
+    }
+  }, [isActive]);
+
+  // Synchronize playback with active state
+  useEffect(() => {
+    if (hasLoaded && videoRef.current) {
+      if (isActive) {
+        videoRef.current.play().catch((err) => {
+          console.error("Video play failed:", err);
+        });
+      } else {
+        videoRef.current.pause();
+      }
+    }
+  }, [hasLoaded, isActive]);
+
+  return (
+    <div
+      onClick={handlePlayPause}
+      className="group relative overflow-hidden rounded-[32px] border border-zinc-200 bg-zinc-100 shadow-sm cursor-pointer"
+    >
+      {/* Video / Thumbnail Container */}
+      <div className="relative aspect-[9/16] overflow-hidden bg-zinc-100">
+        {hasLoaded ? (
+          <video
+            ref={videoRef}
+            src={reel.video}
+            loop
+            playsInline
+            poster={thumbnailUrl}
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <img
+            src={thumbnailUrl}
+            alt={reel.title}
+            loading="lazy"
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        )}
+
+        {/* Light Overlay */}
+        <div className={`absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/25 transition-opacity duration-300 ${isActive ? "opacity-0 hover:opacity-100" : "opacity-100"}`} />
+
+        {/* Play/Pause Button */}
+        <div className={`absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 border border-white/20 backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:bg-black/60 ${isActive ? "opacity-0 hover:opacity-100" : "opacity-70 group-hover:opacity-100"}`}>
+          {isActive ? (
+            <Pause className="h-5 w-5 text-white" />
+          ) : (
+            <Play className="ml-0.5 h-5 w-5 fill-white text-white" />
+          )}
+        </div>
+
+        {/* Bottom Content */}
+        <div className={`absolute bottom-0 left-0 w-full p-5 transition-opacity duration-300 ${isActive ? "opacity-0 hover:opacity-100" : "opacity-100"}`}>
+          <p className="mb-1 text-sm text-white font-medium">
+            {reel.category}
+          </p>
+
+          <h3 className="text-lg font-semibold text-white">
+            {reel.title}
+          </h3>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function WorkShowcaseSection() {
+  const [activeReelId, setActiveReelId] = useState<number | null>(null);
+
   return (
     <section className="h-auto py-10 lg:py-20">
       <div className="relative z-10 mx-auto max-w-7xl px-4">
@@ -61,41 +162,13 @@ export default function WorkShowcaseSection() {
         {/* Videos Grid */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {reels.map((reel) => (
-            <div
+            <ReelCard
               key={reel.id}
-              className="group relative overflow-hidden rounded-[32px] border border-zinc-200 bg-white shadow-sm"
-            >
-              {/* Video */}
-              <div className="relative aspect-[9/16] overflow-hidden">
-                <video
-                  src={reel.video}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-
-                {/* Light Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-
-                {/* Play Button */}
-                <div className="absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/80 backdrop-blur-md transition-all duration-300 group-hover:scale-110">
-                  <Play className="ml-1 h-6 w-6 fill-black text-black" />
-                </div>
-
-                {/* Bottom Content */}
-                <div className="absolute bottom-0 left-0 w-full p-5">
-                  <p className="mb-1 text-sm text-white">
-                    {reel.category}
-                  </p>
-
-                  <h3 className="text-lg font-semibold text-white">
-                    {reel.title}
-                  </h3>
-                </div>
-              </div>
-            </div>
+              reel={reel}
+              isActive={activeReelId === reel.id}
+              onPlay={() => setActiveReelId(reel.id)}
+              onPause={() => setActiveReelId(null)}
+            />
           ))}
         </div>
       </div>
