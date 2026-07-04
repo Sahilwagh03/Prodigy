@@ -72,17 +72,6 @@ export const metadata: Metadata = {
     images: ["/aesthetic-logo-big.svg"],
   },
   manifest: "/site.webmanifest",
-  icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
-      { url: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
-      { url: "/icon.svg", type: "image/svg+xml" }
-    ],
-    apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }
-    ]
-  }
 };
 
 const jsonLd = {
@@ -90,7 +79,7 @@ const jsonLd = {
   "@type": "Organization",
   "name": "Prodigy",
   "url": "https://www.prodigymedia.in",
-  "logo": "https://www.prodigymedia.in/apple-touch-icon.png",
+  "logo": "https://www.prodigymedia.in/icon.svg",
   "sameAs": [
     "https://www.instagram.com/prodigymedia.in"
   ],
