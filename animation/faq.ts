@@ -25,76 +25,79 @@ export const animateFaq = ({ sectionRef }: AnimateFaqProps) => {
     },
   });
 
+  // 🔹 Heading Title (Fades & slides up quickly)
   tl.fromTo(
     headingTitle,
     {
       opacity: 0,
-      y: 40,
-      filter: "blur(14px)",
+      y: 30,
+      filter: "blur(12px)",
     },
     {
       opacity: 1,
       y: 0,
       filter: "blur(0px)",
-      duration: 1,
+      duration: 0.8,
       ease: "power3.out",
-    },
+    }
   )
 
-    // 🔹 Paragraph (slightly after title)
-    .fromTo(
-      headingParagraph,
-      {
-        opacity: 0,
-        y: 40,
-        filter: "blur(14px)",
-      },
-      {
-        opacity: 1,
-        y: 0,
-        filter: "blur(0px)",
-        duration: 1,
-        ease: "power3.out",
-      },
-      "-=0.7",
-    )
+  // 🔹 Heading Paragraph (Tighter overlap)
+  .fromTo(
+    headingParagraph,
+    {
+      opacity: 0,
+      y: 25,
+      filter: "blur(12px)",
+    },
+    {
+      opacity: 1,
+      y: 0,
+      filter: "blur(0px)",
+      duration: 0.8,
+      ease: "power3.out",
+    },
+    "-=0.6"
+  )
 
-    // 🔹 CTA + Accordion together
-    .fromTo(
-      [cta, accordion],
-      {
-        opacity: 0,
-        y: 40,
-        filter: "blur(8px)",
-      },
-      {
-        opacity: 1,
-        y: 0,
-        filter: "blur(0px)",
-        duration: 1,
-        ease: "power3.out",
-      },
-      "-=0.8",
-    )
+  // 🔹 CTA Container & Accordion Container (Simultaneous snappy entry)
+  .fromTo(
+    [cta, accordion],
+    {
+      opacity: 0,
+      y: 30,
+      filter: "blur(8px)",
+    },
+    {
+      opacity: 1,
+      y: 0,
+      filter: "blur(0px)",
+      duration: 0.8,
+      ease: "power3.out",
+    },
+    "-=0.6"
+  )
 
-    // 🔹 FAQ items staggered (in sync with container)
-    .fromTo(
-      items,
-      {
-        opacity: 0,
-        y: 30,
-        filter: "blur(8px)",
-      },
-      {
-        opacity: 1,
-        y: 0,
-        filter: "blur(0px)",
-        duration: 0.8,
-        ease: "power3.out",
-        stagger: 0.08,
-      },
-      "-=0.8",
-    );
+  // 🔹 FAQ Items (Snappy staggered pop reveal similar to AI Personal Branding)
+  .fromTo(
+    items,
+    {
+      opacity: 0,
+      scale: 0.96,
+      y: 20,
+      filter: "blur(6px)",
+    },
+    {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      filter: "blur(0px)",
+      duration: 0.6,
+      ease: "power3.out",
+      stagger: 0.05, // Snappy stagger to eliminate delays
+    },
+    "-=0.5"
+  );
 
   return () => {
     tl.kill();
