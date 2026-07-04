@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import AboutBento from "@/pages/About/about-bento";
 import AboutCore from "@/pages/About/about-core";
 import AboutHeroSection from "@/pages/About/about-hero";
@@ -5,6 +6,11 @@ import AboutImageSeparator from "@/pages/About/about-image-separator";
 import AboutServices from "@/pages/About/about-services";
 import CTA from "@/pages/Home/sections/cta";
 import ServicesHighlight from "@/pages/Services/services-highlight";
+
+export const metadata: Metadata = {
+  title: "About Us",
+  description: "Learn more about Prodigy, a leading digital agency dedicated to web design, custom software engineering, and strategic marketing.",
+};
 
 const AboutPage = () => {
   return (
