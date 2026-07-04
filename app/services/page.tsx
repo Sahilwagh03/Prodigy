@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Pricing from "@/components/pricing";
-import AboutServices from "@/pages/About/about-services";
 import ServiceHero from "@/pages/Services/service-hero";
 import ServiceVideo from "@/pages/Services/service-video";
 
@@ -14,7 +13,6 @@ const ServicesPage = () => {
     <div className="w-full h-full">
       <ServiceHero />
       <ServiceVideo />
-      <AboutServices />
       <Pricing />
     </div>
   );

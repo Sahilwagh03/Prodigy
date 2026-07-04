@@ -21,7 +21,7 @@ export default function FeatureCard({ title, year, image }: FeatureCardProps) {
             alt={title}
             width={1200}
             height={800}
-            className="card-bg absolute inset-0 w-full h-full object-cover z-0"
+            className="card-bg absolute inset-0 w-full h-full object-cover object-top z-0"
           />
 
           {/* Layer 2 — Blur / dark overlay */}
@@ -47,7 +47,7 @@ export default function FeatureCard({ title, year, image }: FeatureCardProps) {
               alt={title}
               width={400}
               height={600}
-              className="preview-img w-40 h-64 lg:w-64 lg:h-80 rounded-2xl object-cover scale-0"
+              className="preview-img w-40 h-64 lg:w-64 lg:h-80 rounded-2xl object-cover object-top scale-0"
             />
           </div>
 

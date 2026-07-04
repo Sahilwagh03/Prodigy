@@ -1,3 +1,4 @@
+import AboutServices from "@/pages/About/about-services";
 import CTA from "@/pages/Home/sections/cta";
 import Experience from "@/pages/Home/sections/experience";
 import Faq from "@/pages/Home/sections/faq";
@@ -7,20 +8,22 @@ import Partners from "@/pages/Home/sections/partners";
 import Services from "@/pages/Home/sections/services";
 import Testimonial from "@/pages/Home/sections/testimonial";
 import WorkShowcaseSection from "@/pages/Home/sections/work-section";
+import AIPersonalBranding from "@/pages/Home/sections/ai-personal-branding";
 
 export default function Home() {
   return (
     <section className="overflow-hidden">
-      <HeroSection/>
+      <HeroSection />
       <main className="w-full h-full">
-          <Partners/>
-          <WorkShowcaseSection/>
-          <Experience/>
-          <FeatureWork/>
-          <Services/>
-          <Testimonial/>
-          <Faq/>
-          <CTA/>
+        <Partners />
+        <WorkShowcaseSection />
+        <AIPersonalBranding />
+        <Experience />
+        <AboutServices />
+        <FeatureWork />
+        <Testimonial />
+        <Faq />
+        <CTA />
       </main>
     </section>
   );

@@ -53,27 +53,27 @@ const FeatureWork = () => {
 
             <div className="grid lg:grid-cols-2 gap-6">
               <FeatureCard
-                title="Monark Studio"
+                title="AI Personal Branding"
                 year="2024"
-                image="https://images.unsplash.com/photo-1707836885248-2b0e3cb0c76e?q=80&w=1064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                image="https://res.cloudinary.com/dmrjruik5/image/upload/v1783157431/featured-work-1_ljtgd4.jpg"
               />
 
               <FeatureCard
-                title="Prime Agency"
-                year="2023"
-                image="https://images.unsplash.com/photo-1680536663869-019bd6ec9fec?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                title="AI Avtar"
+                year="2026"
+                image="https://res.cloudinary.com/dmrjruik5/image/upload/v1783157432/featured-work-4_gwlt3r.jpg"
               />
 
               <FeatureCard
-                title="Bali Creative"
-                year="2023"
-                image="https://images.unsplash.com/photo-1707836868495-3307d371aba4?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                title="Fitness Content Creator"
+                year="2026"
+                image="https://res.cloudinary.com/dmrjruik5/image/upload/v1783157432/featured-work-2_a7fuxz.jpg"
               />
 
               <FeatureCard
-                title="Denver"
-                year="2024"
-                image="https://images.unsplash.com/photo-1697301439949-798044084e15?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                title="AI Automation"
+                year="2025"
+                image="https://res.cloudinary.com/dmrjruik5/image/upload/v1783157431/featured-work-3_zmsekw.jpg"
               />
             </div>
 
