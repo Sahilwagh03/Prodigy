@@ -20,8 +20,8 @@ const ServicesHighlight = () => {
                   <Image
                     src={icon}
                     alt="Crystals"
-                    width={1024}
-                    height={1024}
+                    width={200}
+                    height={200}
                     className="w-auto h-20"
                   />
                 </div>

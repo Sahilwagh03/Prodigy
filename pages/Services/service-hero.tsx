@@ -10,7 +10,7 @@ const ServiceHero = () => {
 
   useGSAP(
     () => {
-      animateServiceHero(sectionRef.current);
+      return animateServiceHero(sectionRef.current);
     },
     { scope: sectionRef },
   );

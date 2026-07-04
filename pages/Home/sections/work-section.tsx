@@ -54,9 +54,10 @@ function ReelCard({ reel, isActive, onPlay, onPause }: ReelCardProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const thumbnailUrl = reel.thumbnail || getThumbnailUrl(reel.video);
+  const shouldRenderVideo = hasLoaded || isActive;
 
   const handlePlayPause = () => {
-    if (!hasLoaded) {
+    if (!shouldRenderVideo) {
       setHasLoaded(true);
       onPlay();
     } else {
@@ -68,16 +69,9 @@ function ReelCard({ reel, isActive, onPlay, onPause }: ReelCardProps) {
     }
   };
 
-  // Preload video if it becomes active from external source
-  useEffect(() => {
-    if (isActive) {
-      setHasLoaded(true);
-    }
-  }, [isActive]);
-
   // Synchronize playback with active state
   useEffect(() => {
-    if (hasLoaded && videoRef.current) {
+    if (shouldRenderVideo && videoRef.current) {
       if (isActive) {
         videoRef.current.play().catch((err) => {
           console.error("Video play failed:", err);
@@ -86,7 +80,7 @@ function ReelCard({ reel, isActive, onPlay, onPause }: ReelCardProps) {
         videoRef.current.pause();
       }
     }
-  }, [hasLoaded, isActive]);
+  }, [shouldRenderVideo, isActive]);
 
   return (
     <div
@@ -95,7 +89,7 @@ function ReelCard({ reel, isActive, onPlay, onPause }: ReelCardProps) {
     >
       {/* Video / Thumbnail Container */}
       <div className="relative aspect-[9/16] overflow-hidden bg-zinc-100">
-        {hasLoaded ? (
+        {shouldRenderVideo ? (
           <video
             ref={videoRef}
             src={reel.video}

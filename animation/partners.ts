@@ -17,7 +17,7 @@ export const animatePartners = (container: HTMLElement) => {
     scrollTrigger: {
       trigger: label,
       start: "top bottom-=80",
-      toggleActions: "play none none reverse",
+      once: true,
     },
     y: 0,
     opacity: 1,
@@ -36,7 +36,7 @@ export const animatePartners = (container: HTMLElement) => {
     scrollTrigger: {
       trigger: heading,
       start: "top bottom-=80",
-      toggleActions: "play none none reverse",
+      once: true,
     },
     y: 0,
     opacity: 1,
@@ -55,7 +55,7 @@ export const animatePartners = (container: HTMLElement) => {
     scrollTrigger: {
       trigger: cards[0],
       start: "top 110%",
-      toggleActions: "play none none reverse",
+      once: true,
     },
     y: 0,
     opacity: 1,

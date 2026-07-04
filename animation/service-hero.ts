@@ -81,4 +81,9 @@ export const animateServiceHero = (container: HTMLElement | null) => {
       },
     });
   });
+
+  return () => {
+    serviceSplit.revert();
+    mm.revert();
+  };
 };

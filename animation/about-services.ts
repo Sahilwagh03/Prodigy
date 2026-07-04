@@ -84,7 +84,7 @@ export const animateAboutServices = (container: HTMLElement | null) => {
     0.3,
   );
 
-  tl.to(
+  const rotationTween = gsap.to(
     ".services-wrapper",
     {
       rotateX: "140deg",
@@ -96,8 +96,7 @@ export const animateAboutServices = (container: HTMLElement | null) => {
         anticipatePin: 1,
         invalidateOnRefresh: true,
       },
-    },
-    0.3,
+    }
   );
 
   tl.to(
@@ -108,4 +107,11 @@ export const animateAboutServices = (container: HTMLElement | null) => {
       ease: "power1.out",
     },
   );
+
+  return () => {
+    tl.scrollTrigger?.kill();
+    tl.kill();
+    rotationTween.scrollTrigger?.kill();
+    rotationTween.kill();
+  };
 };

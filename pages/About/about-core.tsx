@@ -11,7 +11,7 @@ const AboutCore = () => {
 
   useGSAP(
     () => {
-      animateAboutCore(sectionRef.current);
+      return animateAboutCore(sectionRef.current);
     },
     { scope: sectionRef },
   );

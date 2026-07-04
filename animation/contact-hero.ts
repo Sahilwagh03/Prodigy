@@ -25,4 +25,8 @@ export const animateContactHero = (container: HTMLElement | null) => {
     },
     0,
   )
+
+  return () => {
+    contactSplit.revert();
+  };
 };

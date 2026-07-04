@@ -115,20 +115,29 @@ export default function FluidBackground() {
     window.addEventListener("resize", resize)
     resize()
 
-    let start = performance.now()
+    const start = performance.now()
+    let animationFrameId: number;
 
     function render() {
-      let time = (performance.now() - start) * 0.001
+      const time = (performance.now() - start) * 0.001
 
       gl.uniform2f(resolutionUniform, canvas.width, canvas.height)
       gl.uniform1f(timeUniform, time)
 
 
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4)
-      requestAnimationFrame(render)
+      animationFrameId = requestAnimationFrame(render)
     }
 
     render()
+
+    return () => {
+      window.removeEventListener("resize", resize)
+      cancelAnimationFrame(animationFrameId)
+      gl.useProgram(null)
+      gl.deleteProgram(program)
+      gl.deleteBuffer(positionBuffer)
+    }
   }, [])
 
   return (

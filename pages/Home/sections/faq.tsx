@@ -9,7 +9,7 @@ const Faq = () => {
   const sectionRef = useRef<HTMLElement | null>(null);
 
   useGSAP(() => {
-    animateFaq({ sectionRef: sectionRef.current });
+    return animateFaq({ sectionRef: sectionRef.current });
   }, []);
   
   return (

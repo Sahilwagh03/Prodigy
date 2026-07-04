@@ -49,9 +49,18 @@ export const animateAboutCore = (container: HTMLElement | null) => {
 
   initAnimation();
 
+  const onRefreshInit = () => split?.revert();
+  const onRefresh = () => initAnimation();
+
   // refresh on resize (important for mobile)
-  ScrollTrigger.addEventListener("refreshInit", () => split?.revert());
-  ScrollTrigger.addEventListener("refresh", initAnimation);
+  ScrollTrigger.addEventListener("refreshInit", onRefreshInit);
+  ScrollTrigger.addEventListener("refresh", onRefresh);
 
   ScrollTrigger.refresh();
+
+  return () => {
+    ScrollTrigger.removeEventListener("refreshInit", onRefreshInit);
+    ScrollTrigger.removeEventListener("refresh", onRefresh);
+    split?.revert();
+  };
 };

@@ -13,12 +13,7 @@ const HeroSection = () => {
 
   useGSAP(() => {
     if (!heroRef.current) return;
-
-    const ctx = gsap.context(() => {
-      animateHeroElements(heroRef.current!);
-    }, heroRef);
-
-    return () => ctx.revert();
+    return animateHeroElements(heroRef.current!);
   }, []);
 
   return (

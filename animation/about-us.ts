@@ -18,7 +18,7 @@ export const animateAboutUs = (container: HTMLElement) => {
   gsap.to(image, {
     scrollTrigger: {
       trigger: image,
-      start: "top 40%",
+      start: "top 85%",
       toggleActions: "play none none reverse",
     },
     x: 0,

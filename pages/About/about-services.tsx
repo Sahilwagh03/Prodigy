@@ -11,7 +11,7 @@ const AboutServices = () => {
 
   useGSAP(
     () => {
-      animateAboutServices(sectionRef.current);
+      return animateAboutServices(sectionRef.current);
     },
     { scope: sectionRef },
   );
@@ -34,8 +34,8 @@ const AboutServices = () => {
         <Image
           src="/crystal.png"
           alt="Crystal"
-          width={1024}
-          height={1024}
+          width={600}
+          height={600}
           className="crystal-img w-62.5 lg:w-[clamp(320px,30vw,520px)] h-auto shrink-0 rotate-[-20deg] z-20"
           priority
         />

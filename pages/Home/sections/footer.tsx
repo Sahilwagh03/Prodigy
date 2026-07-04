@@ -14,7 +14,7 @@ export default function Footer() {
     <footer>
       <div className="max-w-7xl mx-auto px-4 md:px-10 pt-6 lg:pt-12 pb-5">
         <div className="grid md:grid-cols-2 gap-12 mb-16">
-          
+
           {/* LEFT */}
           <div className="flex flex-col justify-between gap-8 lg:gap-16">
             <div className="space-y-6">
@@ -55,10 +55,10 @@ export default function Footer() {
           <div className="space-y-8">
             {/* EMAIL */}
             <Link
-              href="mailto:prodigy-labs@gmail.com"
+              href="mailto: Info@prodigymedia.in"
               className="text-[1.65rem] lg:text-[2.75rem] font-bold tracking-tight flex gap-2 items-center hover:opacity-70 transition-opacity leading-tight"
             >
-              prodigy-labs@gmail.com
+              Info@prodigymedia.in
               <ArrowUpRight
                 size={32}
                 strokeWidth={1.5}
@@ -68,7 +68,7 @@ export default function Footer() {
 
             {/* LINKS */}
             <div className="grid grid-cols-3 gap-6 text-sm">
-              
+
               {/* MAIN */}
               <div>
                 <p className="mb-4 font-semibold uppercase">Main Pages</p>

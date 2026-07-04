@@ -54,4 +54,6 @@ const ExperienceCard = forwardRef<HTMLDivElement, ExperienceCardProps>(
   },
 );
 
+ExperienceCard.displayName = "ExperienceCard";
+
 export default ExperienceCard;

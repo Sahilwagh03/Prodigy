@@ -41,4 +41,8 @@ export const animateAboutSeparator = (container: HTMLElement | null) => {
       },
     });
   });
+
+  return () => {
+    mm.revert();
+  };
 };

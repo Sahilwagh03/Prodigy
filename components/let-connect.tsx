@@ -17,7 +17,7 @@ export default function LetConnect() {
                   Email
                 </p>
                 <p className="text-[1.125rem] leading-[1.45] tracking-[-.033rem] mt-2 font-semibold">
-                  prodigy-labs@gmail.com
+                  Info@prodigymedia.in
                 </p>
               </div>
 

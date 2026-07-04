@@ -9,7 +9,7 @@ const ContactHero = () => {
 
   useGSAP(
     () => {
-      animateContactHero(sectionRef.current);
+      return animateContactHero(sectionRef.current);
     },
     { scope: sectionRef },
   );

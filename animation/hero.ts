@@ -95,12 +95,7 @@ export const animateHeroElements = (container: HTMLElement) => {
     );
   });
 
-  // 🔥 OPTIONAL: Scroll trigger for entire timeline
-  gsap.timeline({
-    scrollTrigger: {
-      trigger: container,
-      start: "top bottom-=100",
-      toggleActions: "play none none reverse",
-    },
-  }).add(tl);
+  return () => {
+    tl.kill();
+  };
 };

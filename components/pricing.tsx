@@ -1,11 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import { Rocket, Trophy, Crown, Check } from "lucide-react";
 
 export default function Pricing() {
-  const [yearly, setYearly] = useState(false);
-
   // ✅ Fixed one-time pricing (toggle doesn't affect now)
   const pricing = {
     basic: 8000,
@@ -18,7 +15,7 @@ export default function Pricing() {
       <div className="max-w-340 mx-auto px-2">
         <div className="text-center mb-6 lg:mb-12 max-w-3xl mx-auto">
           <h2 className="text-[clamp(1.6rem,3vw,2.5rem)] leading-tight tracking-[-.05rem] font-semibold">
-            Customized packages perfectly suited to your project's requirements
+            Customized packages perfectly suited to your project&apos;s requirements
           </h2>
         </div>
 

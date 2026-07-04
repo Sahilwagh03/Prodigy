@@ -9,7 +9,7 @@ const AboutImageSeparator = () => {
 
   useGSAP(
     () => {
-      animateAboutSeparator(sectionRef.current);
+      return animateAboutSeparator(sectionRef.current);
     },
     { scope: sectionRef },
   );

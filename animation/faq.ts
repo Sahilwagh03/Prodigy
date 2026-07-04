@@ -20,7 +20,7 @@ export const animateFaq = ({ sectionRef }: AnimateFaqProps) => {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: sectionRef,
-      start: "top 40%",
+      start: "top 85%",
       toggleActions: "play none none reverse",
     },
   });
@@ -95,4 +95,8 @@ export const animateFaq = ({ sectionRef }: AnimateFaqProps) => {
       },
       "-=0.8",
     );
+
+  return () => {
+    tl.kill();
+  };
 };
