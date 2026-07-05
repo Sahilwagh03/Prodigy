@@ -1,67 +1,54 @@
 import { gsap } from "@/lib/gsap";
 
 export const animatePartners = (container: HTMLElement) => {
+  if (!container) return;
   const q = gsap.utils.selector(container);
 
   const label = q(".partner-title");
-  const heading = q(".partner-paragraph");
   const cards = q(".partner-card");
 
-  gsap.set(label, {
-    y: 60,
-    opacity: 0,
-    filter: "blur(14px)",
-  });
-
-  gsap.to(label, {
+  const tl = gsap.timeline({
     scrollTrigger: {
-      trigger: label,
-      start: "top bottom-=80",
+      trigger: container,
+      start: "top 95%",
       once: true,
     },
-    y: 0,
-    opacity: 1,
-    filter: "blur(0px)",
-    duration: 1,
-    ease: "power3.out",
   });
 
-  gsap.set(heading, {
-    y: 60,
-    opacity: 0,
-    filter: "blur(14px)",
-  });
+  if (label.length > 0) {
+    tl.fromTo(
+      label,
+      {
+        y: 30,
+        opacity: 0,
+        filter: "blur(10px)",
+      },
+      {
+        y: 0,
+        opacity: 1,
+        filter: "blur(0px)",
+        duration: 0.6,
+        ease: "power3.out",
+      }
+    );
+  }
 
-  gsap.to(heading, {
-    scrollTrigger: {
-      trigger: heading,
-      start: "top bottom-=80",
-      once: true,
-    },
-    y: 0,
-    opacity: 1,
-    filter: "blur(0px)",
-    duration: 1,
-    ease: "power3.out",
-  });
-
-  gsap.set(cards, {
-    y: 60,
-    opacity: 0,
-    filter: "blur(14px)",
-  });
-
-  gsap.to(cards, {
-    scrollTrigger: {
-      trigger: cards[0],
-      start: "top 110%",
-      once: true,
-    },
-    y: 0,
-    opacity: 1,
-    filter: "blur(0px)",
-    duration: 0.9,
-    ease: "power3.out",
-    stagger: 0.15,
-  });
+  if (cards.length > 0) {
+    tl.fromTo(
+      cards,
+      {
+        y: 30,
+        opacity: 0,
+        filter: "blur(10px)",
+      },
+      {
+        y: 0,
+        opacity: 1,
+        filter: "blur(0px)",
+        duration: 0.6,
+        ease: "power3.out",
+      },
+      "-=0.5"
+    );
+  }
 };
