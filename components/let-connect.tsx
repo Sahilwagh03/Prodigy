@@ -1,5 +1,6 @@
 "use client";
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
 export default function LetConnect() {
   return (
@@ -44,15 +45,15 @@ export default function LetConnect() {
 
           {/* SOCIALS */}
           <div className="flex gap-10 mt-20 text-sm font-medium">
-            <a className="text-[1.125rem] leading-[1.45] tracking-[-.033rem] font-semibold flex items-center gap-2 hover:opacity-70 transition">
+            {/* <a className="text-[1.125rem] leading-[1.45] tracking-[-.033rem] font-semibold flex items-center gap-2 hover:opacity-70 transition">
               Facebook <ArrowUpRight size={16} />
             </a>
             <a className="text-[1.125rem] leading-[1.45] tracking-[-.033rem] font-semibold flex items-center gap-2 hover:opacity-70 transition">
               Linkedin <ArrowUpRight size={16} />
-            </a>
-            <a className="text-[1.125rem] leading-[1.45] tracking-[-.033rem] font-semibold flex items-center gap-2 hover:opacity-70 transition">
+            </a> */}
+            <Link target="_blank" href="https://www.instagram.com/prodigymedia.in/" className="text-[1.125rem] leading-[1.45] tracking-[-.033rem] font-semibold flex items-center gap-2 hover:opacity-70 transition">
               Instagram <ArrowUpRight size={16} />
-            </a>
+            </Link>
           </div>
         </div>
 

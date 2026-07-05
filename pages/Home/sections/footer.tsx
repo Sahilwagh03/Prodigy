@@ -19,7 +19,7 @@ export default function Footer() {
           <div className="flex flex-col justify-between gap-8 lg:gap-16">
             <div className="space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold leading-tight">
-                Have any project <br /> idea in your mind!
+                Have any project <br className="hidden md:inline" /> idea in your mind!
               </h2>
 
               <TalkButton
@@ -29,45 +29,40 @@ export default function Footer() {
               />
             </div>
 
-            {/* SOCIALS */}
-            <div className="flex items-center gap-4 text-neutral-600">
-              <Link
-                href="https://instagram.com"
-                target="_blank"
-                aria-label="Instagram"
-                className="hover:text-black transition-colors"
-              >
-                <Instagram size={18} />
-              </Link>
-
-              <Link
-                href="https://linkedin.com"
-                target="_blank"
-                aria-label="LinkedIn"
-                className="hover:text-black transition-colors"
-              >
-                <Linkedin size={18} />
+            {/* SOCIALS (Desktop only in left column) */}
+            <div className="hidden md:flex items-center gap-4 text-neutral-600">
+              <Link target="_blank" href="https://www.instagram.com/prodigymedia.in/" className="text-[1.125rem] leading-[1.45] tracking-[-.033rem] font-semibold flex items-center gap-2 hover:opacity-70 transition">
+                Instagram <ArrowUpRight size={16} />
               </Link>
             </div>
           </div>
 
           {/* RIGHT */}
           <div className="space-y-8">
-            {/* EMAIL */}
-            <Link
-              href="mailto: Info@prodigymedia.in"
-              className="text-[1.65rem] lg:text-[2.75rem] font-bold tracking-tight flex gap-2 items-center hover:opacity-70 transition-opacity leading-tight"
-            >
-              Info@prodigymedia.in
-              <ArrowUpRight
-                size={32}
-                strokeWidth={1.5}
-                className="mt-1 shrink-0"
-              />
-            </Link>
+            {/* EMAIL & SOCIALS */}
+            <div className="flex flex-col gap-4">
+              <Link
+                href="mailto: Info@prodigymedia.in"
+                className="text-[1.65rem] lg:text-[2.75rem] font-bold tracking-tight flex gap-2 items-center hover:opacity-70 transition-opacity leading-tight"
+              >
+                Info@prodigymedia.in
+                <ArrowUpRight
+                  size={32}
+                  strokeWidth={1.5}
+                  className="mt-1 shrink-0"
+                />
+              </Link>
+
+              {/* Mobile-only Socials */}
+              <div className="flex md:hidden items-center gap-4 text-neutral-600">
+                <Link target="_blank" href="https://www.instagram.com/prodigymedia.in/" className="text-[1.125rem] leading-[1.45] tracking-[-.033rem] font-semibold flex items-center gap-2 hover:opacity-70 transition">
+                  Instagram <ArrowUpRight size={16} />
+                </Link>
+              </div>
+            </div>
 
             {/* LINKS */}
-            <div className="grid grid-cols-3 gap-6 text-sm">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 text-sm">
 
               {/* MAIN */}
               <div>
