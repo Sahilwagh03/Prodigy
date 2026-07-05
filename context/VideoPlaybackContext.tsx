@@ -35,7 +35,11 @@ export const VideoPlaybackProvider = ({ children }: { children: React.ReactNode 
 export const useVideoPlayback = () => {
   const ctx = useContext(VideoPlaybackContext);
   if (!ctx) {
-    throw new Error("useVideoPlayback must be used inside a VideoPlaybackProvider");
+    return {
+      activeVideoId: null,
+      playVideo: () => {},
+      pauseVideo: () => {},
+    };
   }
   return ctx;
 };
