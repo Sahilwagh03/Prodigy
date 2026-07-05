@@ -7,6 +7,7 @@ import TalkButton from "../../../components/talk-button";
 import { animateFeatureWork } from "@/animation/feature";
 import { gsap } from "@/lib/gsap";
 import { useGSAP } from "@gsap/react";
+import { useVideoPlayback } from "@/context/VideoPlaybackContext";
 
 const featuredReels = [
   {
@@ -41,27 +42,34 @@ const featuredReels = [
 
 interface FeatureVideoCardProps {
   reel: typeof featuredReels[0];
-  isActive: boolean;
-  onPlay: () => void;
-  onPause: () => void;
 }
 
-function FeatureVideoCard({ reel, isActive, onPlay, onPause }: FeatureVideoCardProps) {
+function FeatureVideoCard({ reel }: FeatureVideoCardProps) {
   const [hasLoaded, setHasLoaded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const { activeVideoId, playVideo, pauseVideo } = useVideoPlayback();
+
+  const myVideoId = reel.video;
+  const isActive = activeVideoId === myVideoId;
 
   const shouldRenderVideo = hasLoaded || isActive;
 
   const handlePlayPause = () => {
     if (!shouldRenderVideo) {
       setHasLoaded(true);
-      onPlay();
+      playVideo(myVideoId);
     } else {
       if (isActive) {
-        onPause();
+        pauseVideo(myVideoId);
       } else {
-        onPlay();
+        playVideo(myVideoId);
       }
+    }
+  };
+
+  const handleNativePause = () => {
+    if (isActive) {
+      pauseVideo(myVideoId);
     }
   };
 
@@ -91,6 +99,7 @@ function FeatureVideoCard({ reel, isActive, onPlay, onPause }: FeatureVideoCardP
             loop
             playsInline
             poster={reel.thumbnail}
+            onPause={handleNativePause}
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
@@ -131,7 +140,6 @@ function FeatureVideoCard({ reel, isActive, onPlay, onPause }: FeatureVideoCardP
 
 const FeatureWork = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const [activeReelId, setActiveReelId] = useState<number | null>(null);
 
   useGSAP(() => {
     if (!sectionRef.current) return;
@@ -180,9 +188,6 @@ const FeatureWork = () => {
                 <FeatureVideoCard
                   key={reel.id}
                   reel={reel}
-                  isActive={activeReelId === reel.id}
-                  onPlay={() => setActiveReelId(reel.id)}
-                  onPause={() => setActiveReelId(null)}
                 />
               ))}
             </div>

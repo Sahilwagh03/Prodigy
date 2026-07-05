@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { Play, Pause } from "lucide-react";
+import { useVideoPlayback } from "@/context/VideoPlaybackContext";
 
 const reels = [
   {
@@ -58,14 +59,15 @@ const getThumbnailUrl = (videoUrl: string) => {
 
 interface ReelCardProps {
   reel: typeof reels[0];
-  isActive: boolean;
-  onPlay: () => void;
-  onPause: () => void;
 }
 
-function ReelCard({ reel, isActive, onPlay, onPause }: ReelCardProps) {
+function ReelCard({ reel }: ReelCardProps) {
   const [hasLoaded, setHasLoaded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const { activeVideoId, playVideo, pauseVideo } = useVideoPlayback();
+
+  const myVideoId = reel.video;
+  const isActive = activeVideoId === myVideoId;
 
   const thumbnailUrl = reel.thumbnail || getThumbnailUrl(reel.video);
   const shouldRenderVideo = hasLoaded || isActive;
@@ -73,13 +75,19 @@ function ReelCard({ reel, isActive, onPlay, onPause }: ReelCardProps) {
   const handlePlayPause = () => {
     if (!shouldRenderVideo) {
       setHasLoaded(true);
-      onPlay();
+      playVideo(myVideoId);
     } else {
       if (isActive) {
-        onPause();
+        pauseVideo(myVideoId);
       } else {
-        onPlay();
+        playVideo(myVideoId);
       }
+    }
+  };
+
+  const handleNativePause = () => {
+    if (isActive) {
+      pauseVideo(myVideoId);
     }
   };
 
@@ -110,6 +118,7 @@ function ReelCard({ reel, isActive, onPlay, onPause }: ReelCardProps) {
             loop
             playsInline
             poster={thumbnailUrl}
+            onPause={handleNativePause}
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
@@ -149,8 +158,6 @@ function ReelCard({ reel, isActive, onPlay, onPause }: ReelCardProps) {
 }
 
 export default function WorkShowcaseSection() {
-  const [activeReelId, setActiveReelId] = useState<number | null>(null);
-
   return (
     <section className="h-auto py-10 lg:py-20">
       <div className="relative z-10 mx-auto max-w-7xl px-4">
@@ -173,9 +180,6 @@ export default function WorkShowcaseSection() {
             <ReelCard
               key={reel.id}
               reel={reel}
-              isActive={activeReelId === reel.id}
-              onPlay={() => setActiveReelId(reel.id)}
-              onPause={() => setActiveReelId(null)}
             />
           ))}
         </div>
