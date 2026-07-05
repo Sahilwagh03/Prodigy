@@ -1,6 +1,7 @@
 "use client";
 import { animateServiceHero } from "@/animation/service-hero";
 import TalkButton from "@/components/talk-button";
+import { CONTACT_WHATSAPP_URL } from "@/constant/links";
 import { useGSAP } from "@gsap/react";
 import Image from "next/image";
 import { useRef } from "react";
@@ -36,7 +37,7 @@ const ServiceHero = () => {
               tailored to your business needs.
             </p>
             <div className="service-btn">
-              <TalkButton className="w-fit" />
+              <TalkButton className="w-fit" href={CONTACT_WHATSAPP_URL} />
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 'use client';
 import FluidSimulation from "../../../components/fluid-simulation";
 import TalkButton from "../../../components/talk-button";
+import { CONTACT_WHATSAPP_URL } from "@/constant/links";
 
 const CTA = () => {
   return (
@@ -22,7 +23,7 @@ const CTA = () => {
           </h2>
 
           <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-4 w-full sm:w-auto px-4 sm:px-0 justify-center items-center">
-            <TalkButton label="Start Your Project" className="w-full sm:w-auto justify-center py-3 sm:py-2" />
+            <TalkButton label="Start Your Project" className="w-full sm:w-auto justify-center py-3 sm:py-2" href={CONTACT_WHATSAPP_URL} />
 
             <button className="w-full sm:w-auto cursor-pointer px-6 py-3 sm:py-2 rounded-full border text-white bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20 transition-all duration-200 active:scale-[0.98] text-center">
               View Our Work

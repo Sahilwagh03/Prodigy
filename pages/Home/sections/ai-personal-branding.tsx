@@ -67,9 +67,8 @@ export default function AIPersonalBranding() {
         {/* Grid - 3 cards of 3:4 aspect ratio */}
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {brandingCards.map((card) => (
-            <Link href={card.insta_url} target="_blank">
+            <Link href={card.insta_url} target="_blank" key={card.id}>
               <div
-                key={card.id}
                 className="branding-card group relative aspect-[3/4] overflow-hidden rounded-[32px] border border-zinc-200 bg-zinc-100 shadow-sm cursor-pointer"
               >
                 {/* Card Image Wrapper */}

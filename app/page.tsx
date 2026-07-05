@@ -18,9 +18,9 @@ export default function Home() {
         <Partners />
         <WorkShowcaseSection />
         <AIPersonalBranding />
+        <FeatureWork />
         <Experience />
         <AboutServices />
-        <FeatureWork />
         <Testimonial />
         <Faq />
         <CTA />

@@ -186,6 +186,7 @@ const FeatureWork = () => {
                 label="View more"
                 className="group mt-8 lg:mt-16 w-fit bg-black text-white hover:bg-[#f3350c]"
                 dotClassName="bg-[#f3350c] group-hover:bg-white"
+                href="https://www.instagram.com/prodigymedia.in/"
               />
             </div>
           </div>

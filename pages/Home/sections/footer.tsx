@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import TalkButton from "../../../components/talk-button";
+import { CONTACT_WHATSAPP_URL } from "@/constant/links";
 import Logo from "../../../components/logo";
 
 export default function Footer() {
@@ -25,12 +26,13 @@ export default function Footer() {
                 label="Book a free strategy call"
                 dotClassName="bg-[#f3350c]"
                 className="bg-black text-white hover:bg-black"
+                href={CONTACT_WHATSAPP_URL}
               />
             </div>
 
             <div className="hidden md:flex items-center gap-4 text-neutral-600">
               <Link target="_blank" href="https://www.instagram.com/prodigymedia.in/" className="text-[1.125rem] leading-[1.45] tracking-[-.033rem] font-semibold flex items-center gap-2 hover:opacity-70 transition">
-                Instagram <ArrowUpRight size={16} />
+                <Instagram size={20} />
               </Link>
             </div>
           </div>
@@ -39,7 +41,7 @@ export default function Footer() {
             <div className="flex flex-col gap-4">
               <Link
                 href="mailto: Info@prodigymedia.in"
-                className="text-[1.65rem] lg:text-[2.75rem] font-bold tracking-tight flex gap-2 items-center hover:opacity-70 transition-opacity leading-tight"
+                className="text-[2rem] lg:text-[3rem] font-bold tracking-tight flex gap-2 items-center hover:opacity-70 transition-opacity leading-tight"
               >
                 Info@prodigymedia.in
                 <ArrowUpRight
@@ -51,7 +53,7 @@ export default function Footer() {
 
               <div className="flex md:hidden items-center gap-4 text-neutral-600">
                 <Link target="_blank" href="https://www.instagram.com/prodigymedia.in/" className="text-[1.125rem] leading-[1.45] tracking-[-.033rem] font-semibold flex items-center gap-2 hover:opacity-70 transition">
-                  Instagram <ArrowUpRight size={16} />
+                  <Instagram size={20} />
                 </Link>
               </div>
             </div>

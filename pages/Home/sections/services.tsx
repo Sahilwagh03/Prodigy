@@ -1,6 +1,7 @@
 "use client";
 
 import TalkButton from "../../../components/talk-button";
+import { CONTACT_WHATSAPP_URL } from "@/constant/links";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import Image from "next/image";
@@ -78,7 +79,7 @@ const Services = () => {
               growth
             </h2>
             <div className="services-button flex-1 flex justify-end w-fit h-full items-end">
-              <TalkButton className="w-fit h-fit bg-black text-white hover:bg-black" dotClassName="bg-red-500"/>
+              <TalkButton className="w-fit h-fit bg-black text-white hover:bg-black" dotClassName="bg-red-500" href={CONTACT_WHATSAPP_URL}/>
             </div>
           </div>
 

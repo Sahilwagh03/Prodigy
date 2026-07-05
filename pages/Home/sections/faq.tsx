@@ -1,6 +1,7 @@
 'use client';
 import { useRef } from "react";
 import TalkButton from "../../../components/talk-button";
+import { CONTACT_WHATSAPP_URL } from "@/constant/links";
 import FaqAccordion from "../../../components/faq-accordion";
 import { animateFaq } from "@/animation/faq";
 import { useGSAP } from "@gsap/react";
@@ -15,7 +16,8 @@ const Faq = () => {
   return (
     <section
       ref={sectionRef}
-      className="faq-section h-auto bg-cover py-8 lg:py-28 bg-no-repeat bg-position-[50%] bg-[url(/dotted-bg.webp)]"
+      id="faq"
+      className="bg-[#f5f5f7] py-8 lg:py-28 rounded-4xl mx-4 mb-4 lg:mb-12 overflow-hidden"
     >
       <div className="w-full h-full px-4 max-w-340 mx-auto">
         <div className="h-full flex flex-col lg:flex-row gap-7">
@@ -37,7 +39,7 @@ const Faq = () => {
                 If you have questions or need more details, feel free to reach
                 out.
               </p>
-              <TalkButton className="w-fit bg-black text-white hover:bg-[#f3350c]" />
+              <TalkButton className="w-fit bg-black text-white hover:bg-[#f3350c]" href={CONTACT_WHATSAPP_URL} />
             </div>
           </div>
           <div className="flex-7 h-full">

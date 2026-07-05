@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import TalkButton from "../../../components/talk-button";
+import { CONTACT_WHATSAPP_URL } from "@/constant/links";
 import { Plus } from "lucide-react";
 import { useRef } from "react";
 import { animateAboutUs } from "@/animation/about-us";
@@ -56,6 +57,7 @@ const AboutUs = () => {
                 <TalkButton
                   className="w-fit bg-black text-white hover:bg-black"
                   dotClassName="bg-red-500"
+                  href={CONTACT_WHATSAPP_URL}
                 />
               </div>
             </div>
