@@ -15,7 +15,6 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 md:px-10 pt-6 lg:pt-12 pb-5">
         <div className="grid md:grid-cols-2 gap-12 mb-16">
 
-          {/* LEFT */}
           <div className="flex flex-col justify-between gap-8 lg:gap-16">
             <div className="space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold leading-tight">
@@ -29,7 +28,6 @@ export default function Footer() {
               />
             </div>
 
-            {/* SOCIALS (Desktop only in left column) */}
             <div className="hidden md:flex items-center gap-4 text-neutral-600">
               <Link target="_blank" href="https://www.instagram.com/prodigymedia.in/" className="text-[1.125rem] leading-[1.45] tracking-[-.033rem] font-semibold flex items-center gap-2 hover:opacity-70 transition">
                 Instagram <ArrowUpRight size={16} />
@@ -37,9 +35,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* RIGHT */}
           <div className="space-y-8">
-            {/* EMAIL & SOCIALS */}
             <div className="flex flex-col gap-4">
               <Link
                 href="mailto: Info@prodigymedia.in"
@@ -53,7 +49,6 @@ export default function Footer() {
                 />
               </Link>
 
-              {/* Mobile-only Socials */}
               <div className="flex md:hidden items-center gap-4 text-neutral-600">
                 <Link target="_blank" href="https://www.instagram.com/prodigymedia.in/" className="text-[1.125rem] leading-[1.45] tracking-[-.033rem] font-semibold flex items-center gap-2 hover:opacity-70 transition">
                   Instagram <ArrowUpRight size={16} />
@@ -61,10 +56,8 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* LINKS */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 text-sm">
 
-              {/* MAIN */}
               <div>
                 <p className="mb-4 font-semibold uppercase">Main Pages</p>
                 <ul className="space-y-3">
@@ -73,7 +66,6 @@ export default function Footer() {
                 </ul>
               </div>
 
-              {/* MORE */}
               <div>
                 <p className="mb-4 font-semibold uppercase">More Pages</p>
                 <ul className="space-y-3">
@@ -82,7 +74,6 @@ export default function Footer() {
                 </ul>
               </div>
 
-              {/* UTILITY */}
               <div>
                 <p className="mb-4 font-semibold uppercase">Utility Pages</p>
                 <ul className="space-y-3">
@@ -94,7 +85,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* BOTTOM */}
         <div className="border-t text-center lg:text-right border-neutral-200 pt-4 flex flex-col md:flex-row justify-between items-center gap-3 text-sm text-neutral-500">
           <Link href="/">
             <Logo className="text-black w-auto h-10" />

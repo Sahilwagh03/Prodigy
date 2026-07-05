@@ -109,7 +109,6 @@ function ReelCard({ reel }: ReelCardProps) {
       onClick={handlePlayPause}
       className="group relative overflow-hidden rounded-[32px] border border-zinc-200 bg-zinc-100 shadow-sm cursor-pointer"
     >
-      {/* Video / Thumbnail Container */}
       <div className="relative aspect-[9/16] overflow-hidden bg-zinc-100">
         {shouldRenderVideo ? (
           <video
@@ -130,10 +129,8 @@ function ReelCard({ reel }: ReelCardProps) {
           />
         )}
 
-        {/* Light Overlay */}
         <div className={`absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/25 transition-opacity duration-300 ${isActive ? "opacity-0 hover:opacity-100" : "opacity-100"}`} />
 
-        {/* Play/Pause Button */}
         <div className={`absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 border border-white/20 backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:bg-black/60 ${isActive ? "opacity-0 hover:opacity-100" : "opacity-70 group-hover:opacity-100"}`}>
           {isActive ? (
             <Pause className="h-5 w-5 text-white" />
@@ -142,7 +139,6 @@ function ReelCard({ reel }: ReelCardProps) {
           )}
         </div>
 
-        {/* Bottom Content */}
         <div className={`absolute bottom-0 left-0 w-full p-5 transition-opacity duration-300 ${isActive ? "opacity-0 hover:opacity-100" : "opacity-100"}`}>
           <p className="mb-1 text-sm text-white font-medium">
             {reel.category}
@@ -161,7 +157,6 @@ export default function WorkShowcaseSection() {
   return (
     <section className="h-auto py-10 lg:py-20">
       <div className="relative z-10 mx-auto max-w-7xl px-4">
-        {/* Heading */}
         <div className="mx-auto mb-14 flex max-w-3xl flex-col items-center justify-center text-center">
           <h2 className="text-[2rem] font-semibold leading-tight tracking-[-.075rem] text-black lg:text-[2.5rem]">
             Scroll-Stopping
@@ -174,7 +169,6 @@ export default function WorkShowcaseSection() {
           </p>
         </div>
 
-        {/* Videos Grid */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {reels.map((reel) => (
             <ReelCard

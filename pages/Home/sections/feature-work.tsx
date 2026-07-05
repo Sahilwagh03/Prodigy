@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import Image from "next/image";
 import { Play, Pause } from "lucide-react";
 import TalkButton from "../../../components/talk-button";
 import { animateFeatureWork } from "@/animation/feature";
@@ -90,7 +89,6 @@ function FeatureVideoCard({ reel }: FeatureVideoCardProps) {
       onClick={handlePlayPause}
       className="feature-card group relative overflow-hidden rounded-[32px] border border-zinc-200 bg-zinc-100 shadow-sm cursor-pointer"
     >
-      {/* Video / Thumbnail Container */}
       <div className="relative aspect-[9/16] overflow-hidden bg-zinc-100">
         {shouldRenderVideo ? (
           <video
@@ -111,10 +109,8 @@ function FeatureVideoCard({ reel }: FeatureVideoCardProps) {
           />
         )}
 
-        {/* Light Overlay */}
         <div className={`absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/25 transition-opacity duration-300 ${isActive ? "opacity-0 hover:opacity-100" : "opacity-100"}`} />
 
-        {/* Play/Pause Button */}
         <div className={`absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 border border-white/20 backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:bg-black/60 ${isActive ? "opacity-0 hover:opacity-100" : "opacity-70 group-hover:opacity-100"}`}>
           {isActive ? (
             <Pause className="h-5 w-5 text-white" />
@@ -123,7 +119,6 @@ function FeatureVideoCard({ reel }: FeatureVideoCardProps) {
           )}
         </div>
 
-        {/* Bottom Content */}
         <div className={`absolute bottom-0 left-0 w-full p-5 transition-opacity duration-300 ${isActive ? "opacity-0 hover:opacity-100" : "opacity-100"}`}>
           <p className="mb-1 text-sm text-white font-medium">
             {reel.year}
@@ -165,20 +160,14 @@ const FeatureWork = () => {
               </div>
 
               <div className="flex-1 flex flex-col gap-10 justify-between max-w-78.75 self-stretch">
-                <div className="feature-right-item bg-neutral-100 px-2 rounded-full flex justify-center items-center h-24 max-w-24 overflow-hidden">
-                  <Image
-                    src="/fire-logo.svg"
-                    alt="feature-work-logo"
-                    width={130}
-                    height={130}
-                    className="scale-450"
-                  />
+                <div className="feature-right-item w-fit px-6 py-3 rounded-full bg-[#f3350c] text-white text-xs md:text-sm font-black uppercase tracking-widest flex items-center justify-center">
+                  Video Editing
                 </div>
 
                 <p className="feature-right-item text-[#4d4d4d] text-[1rem] leading-relaxed font-normal">
-                  We blend creativity with technical expertise to craft
-                  experiences that captivate audiences and communicate your
-                  brand message.
+                  We combine dynamic pacing, custom sound design, and cinematic
+                  storytelling to craft high-retention video edits that hook
+                  viewers and scale your brand's digital presence.
                 </p>
               </div>
             </div>
