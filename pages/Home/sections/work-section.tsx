@@ -32,6 +32,20 @@ const reels = [
     title: "Travel",
     category: "UGC Strategy",
   },
+  {
+    id: 5,
+    video: "https://res.cloudinary.com/dmrjruik5/video/upload/v1783217468/Davinder_kgznvb.mp4",
+    thumbnail: "https://res.cloudinary.com/dmrjruik5/video/upload/f_auto,q_auto,w_600,h_1066,c_fill,so_11.7/v1783217468/Davinder_kgznvb.jpg",
+    title: "Beauty And Skincare",
+    category: "UGC Strategy",
+  },
+  {
+    id: 6,
+    video: "https://res.cloudinary.com/dmrjruik5/video/upload/v1783217482/Niharika_xrzx5r.mp4",
+    thumbnail: "https://res.cloudinary.com/dmrjruik5/video/upload/f_auto,q_auto,w_600,h_1066,c_fill,so_27.3/v1783217482/Niharika_xrzx5r.jpg",
+    title: "Product",
+    category: "UGC Strategy",
+  },
 ];
 
 // Helper to construct optimized Cloudinary thumbnail URL from video URL

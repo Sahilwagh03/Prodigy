@@ -60,18 +60,12 @@ export const animateFeatureWork = (container: HTMLElement) => {
     const marqueeWrapper = card.querySelector(".card-marquee");
     const marqueeTrack = card.querySelector(".marquee-track");
 
-    if (!bg || !blur || !preview || !marqueeWrapper || !marqueeTrack) return;
-
     gsap.set(card, {
       scale: 0.85,
       transformPerspective: 1000,
       transformOrigin: "center center",
       force3D: true,
     });
-
-    gsap.set(preview, { scale: 0, y: 40, rotate: -8, force3D: true });
-    gsap.set(marqueeWrapper, { opacity: 0 });
-    gsap.set(marqueeTrack, { x: 0 });
 
     gsap.to(card, {
       scale: 1,
@@ -83,6 +77,12 @@ export const animateFeatureWork = (container: HTMLElement) => {
         toggleActions: "play none none reverse",
       },
     });
+
+    if (!bg || !blur || !preview || !marqueeWrapper || !marqueeTrack) return;
+
+    gsap.set(preview, { scale: 0, y: 40, rotate: -8, force3D: true });
+    gsap.set(marqueeWrapper, { opacity: 0 });
+    gsap.set(marqueeTrack, { x: 0 });
 
     const marqueeTween = gsap.to(marqueeTrack, {
       x: "-50%",

@@ -1,14 +1,137 @@
 "use client";
+
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import FeatureCard from "../../../components/feature-card";
+import { Play, Pause } from "lucide-react";
 import TalkButton from "../../../components/talk-button";
 import { animateFeatureWork } from "@/animation/feature";
-import { useRef } from "react";
 import { gsap } from "@/lib/gsap";
 import { useGSAP } from "@gsap/react";
 
+const featuredReels = [
+  {
+    id: 1,
+    video: "https://res.cloudinary.com/dmrjruik5/video/upload/v1783221972/tyagi_media_akmjy1.mp4",
+    thumbnail: "https://res.cloudinary.com/dmrjruik5/video/upload/f_auto,q_auto,w_600,h_1066,c_fill,so_37.52/v1783221972/tyagi_media_akmjy1.jpg",
+    title: "Tyagi Media",
+    year: "2024",
+  },
+  {
+    id: 2,
+    video: "https://res.cloudinary.com/dmrjruik5/video/upload/v1783221968/Final_fx1tlk.mp4",
+    thumbnail: "https://res.cloudinary.com/dmrjruik5/video/upload/f_auto,q_auto,w_600,h_1066,c_fill,so_22.28/v1783221968/Final_fx1tlk.jpg",
+    title: "Content Growth",
+    year: "2026",
+  },
+  {
+    id: 3,
+    video: "https://res.cloudinary.com/dmrjruik5/video/upload/v1783222253/banana_xjp7hi.mp4",
+    thumbnail: "https://res.cloudinary.com/dmrjruik5/video/upload/f_auto,q_auto,w_600,h_1066,c_fill,so_1.56/v1783222253/banana_xjp7hi.jpg",
+    title: "Banana Export",
+    year: "2026",
+  },
+  {
+    id: 4,
+    video: "https://res.cloudinary.com/dmrjruik5/video/upload/v1783157431/featured-work-3_zmsekw.mp4",
+    thumbnail: "https://res.cloudinary.com/dmrjruik5/image/upload/v1783157431/featured-work-3_zmsekw.jpg",
+    title: "AI Automation",
+    year: "2025",
+  },
+];
+
+interface FeatureVideoCardProps {
+  reel: typeof featuredReels[0];
+  isActive: boolean;
+  onPlay: () => void;
+  onPause: () => void;
+}
+
+function FeatureVideoCard({ reel, isActive, onPlay, onPause }: FeatureVideoCardProps) {
+  const [hasLoaded, setHasLoaded] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const shouldRenderVideo = hasLoaded || isActive;
+
+  const handlePlayPause = () => {
+    if (!shouldRenderVideo) {
+      setHasLoaded(true);
+      onPlay();
+    } else {
+      if (isActive) {
+        onPause();
+      } else {
+        onPlay();
+      }
+    }
+  };
+
+  useEffect(() => {
+    if (shouldRenderVideo && videoRef.current) {
+      if (isActive) {
+        videoRef.current.play().catch((err) => {
+          console.error("Video play failed:", err);
+        });
+      } else {
+        videoRef.current.pause();
+      }
+    }
+  }, [shouldRenderVideo, isActive]);
+
+  return (
+    <div
+      onClick={handlePlayPause}
+      className="feature-card group relative overflow-hidden rounded-[32px] border border-zinc-200 bg-zinc-100 shadow-sm cursor-pointer"
+    >
+      {/* Video / Thumbnail Container */}
+      <div className="relative aspect-[9/16] overflow-hidden bg-zinc-100">
+        {shouldRenderVideo ? (
+          <video
+            ref={videoRef}
+            src={reel.video}
+            loop
+            playsInline
+            poster={reel.thumbnail}
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <img
+            src={reel.thumbnail}
+            alt={reel.title}
+            loading="lazy"
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        )}
+
+        {/* Light Overlay */}
+        <div className={`absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/25 transition-opacity duration-300 ${isActive ? "opacity-0 hover:opacity-100" : "opacity-100"}`} />
+
+        {/* Play/Pause Button */}
+        <div className={`absolute left-1/2 top-1/2 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-black/40 border border-white/20 backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:bg-black/60 ${isActive ? "opacity-0 hover:opacity-100" : "opacity-70 group-hover:opacity-100"}`}>
+          {isActive ? (
+            <Pause className="h-5 w-5 text-white" />
+          ) : (
+            <Play className="ml-0.5 h-5 w-5 fill-white text-white" />
+          )}
+        </div>
+
+        {/* Bottom Content */}
+        <div className={`absolute bottom-0 left-0 w-full p-5 transition-opacity duration-300 ${isActive ? "opacity-0 hover:opacity-100" : "opacity-100"}`}>
+          <p className="mb-1 text-sm text-white font-medium">
+            {reel.year}
+          </p>
+
+          <h3 className="text-lg font-semibold text-white">
+            {reel.title}
+          </h3>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 const FeatureWork = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const [activeReelId, setActiveReelId] = useState<number | null>(null);
 
   useGSAP(() => {
     if (!sectionRef.current) return;
@@ -19,6 +142,7 @@ const FeatureWork = () => {
 
     return () => ctx.revert();
   }, []);
+
   return (
     <section ref={sectionRef} className="h-full mx-4">
       <div className="py-8 lg:py-32.5 rounded-[1.875rem] bg-white mx-auto max-w-340">
@@ -52,29 +176,15 @@ const FeatureWork = () => {
             </div>
 
             <div className="grid lg:grid-cols-2 gap-6">
-              <FeatureCard
-                title="AI Personal Branding"
-                year="2024"
-                image="https://res.cloudinary.com/dmrjruik5/image/upload/v1783157431/featured-work-1_ljtgd4.jpg"
-              />
-
-              <FeatureCard
-                title="AI Avtar"
-                year="2026"
-                image="https://res.cloudinary.com/dmrjruik5/image/upload/v1783157432/featured-work-4_gwlt3r.jpg"
-              />
-
-              <FeatureCard
-                title="Fitness Content Creator"
-                year="2026"
-                image="https://res.cloudinary.com/dmrjruik5/image/upload/v1783157432/featured-work-2_a7fuxz.jpg"
-              />
-
-              <FeatureCard
-                title="AI Automation"
-                year="2025"
-                image="https://res.cloudinary.com/dmrjruik5/image/upload/v1783157431/featured-work-3_zmsekw.jpg"
-              />
+              {featuredReels.map((reel) => (
+                <FeatureVideoCard
+                  key={reel.id}
+                  reel={reel}
+                  isActive={activeReelId === reel.id}
+                  onPlay={() => setActiveReelId(reel.id)}
+                  onPause={() => setActiveReelId(null)}
+                />
+              ))}
             </div>
 
             <div className="flex justify-center">

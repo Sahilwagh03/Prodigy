@@ -36,7 +36,7 @@ const Testimonial = () => {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
             
             {/* Card 1: Left Tall Card (Spans 5 columns out of 12 on desktop) */}
-            <div className="testimonial-card md:col-span-5 bg-white border border-zinc-200/80 rounded-[32px] p-8 shadow-sm flex flex-col justify-between h-full min-h-[380px] md:min-h-[480px] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-2 hover:scale-[1.01] hover:shadow-lg hover:border-zinc-300/90 cursor-pointer">
+            <div className="testimonial-card md:col-span-5 bg-white border border-zinc-200/80 rounded-[32px] p-8 shadow-sm flex flex-col justify-between h-full min-h-[380px] md:min-h-[480px]">
               <div>
                 <div className="flex flex-col gap-1 mb-6">
                   <div className="text-5xl md:text-6xl font-bold tracking-tight text-black">
@@ -71,7 +71,7 @@ const Testimonial = () => {
             <div className="md:col-span-7 flex flex-col gap-6">
               
               {/* Card 2: Right Top Wide Card */}
-              <div className="testimonial-card bg-white border border-zinc-200/80 rounded-[32px] p-8 shadow-sm flex flex-col justify-between h-full min-h-[220px] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-2 hover:scale-[1.01] hover:shadow-lg hover:border-zinc-300/90 cursor-pointer">
+              <div className="testimonial-card bg-white border border-zinc-200/80 rounded-[32px] p-8 shadow-sm flex flex-col justify-between h-full min-h-[220px]">
                 <div>
                   <div className="flex flex-col sm:flex-row sm:items-baseline gap-2 mb-6">
                     <span className="text-5xl md:text-6xl font-bold tracking-tight text-black">2X</span>
@@ -102,7 +102,7 @@ const Testimonial = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 
                 {/* Card 3: Bottom Left Card */}
-                <div className="testimonial-card bg-white border border-zinc-200/80 rounded-[32px] p-8 shadow-sm flex flex-col justify-between h-full min-h-[220px] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-2 hover:scale-[1.01] hover:shadow-lg hover:border-zinc-300/90 cursor-pointer">
+                <div className="testimonial-card bg-white border border-zinc-200/80 rounded-[32px] p-8 shadow-sm flex flex-col justify-between h-full min-h-[220px]">
                   <div className="flex flex-col justify-center mb-6">
                     <span className="text-[#f02508] text-4xl font-serif leading-none select-none mb-1 block">
                       “
@@ -123,7 +123,7 @@ const Testimonial = () => {
                 </div>
 
                 {/* Card 4: Bottom Right Card (dark card) */}
-                <div className="testimonial-card bg-zinc-900 text-white rounded-[32px] p-8 shadow-sm flex flex-col justify-between h-full min-h-[220px] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-2 hover:scale-[1.01] hover:shadow-lg hover:bg-zinc-950 cursor-pointer">
+                <div className="testimonial-card bg-zinc-900 text-white rounded-[32px] p-8 shadow-sm flex flex-col justify-between h-full min-h-[220px]">
                   <div className="flex flex-col justify-center mb-6">
                     <span className="text-[#f02508] text-4xl font-serif leading-none select-none mb-1 block">
                       “
