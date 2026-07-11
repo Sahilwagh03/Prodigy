@@ -1,7 +1,11 @@
 'use client';
-import FluidSimulation from "../../../components/fluid-simulation";
+import dynamic from "next/dynamic";
 import TalkButton from "../../../components/talk-button";
 import { CONTACT_WHATSAPP_URL } from "@/constant/links";
+
+const FluidSimulation = dynamic(() => import("../../../components/fluid-simulation"), {
+  ssr: false,
+});
 
 const CTA = () => {
   return (

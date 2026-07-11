@@ -202,21 +202,21 @@ const Experience = () => {
             <div className="relative w-full flex justify-center items-center px-8 h-52">
               <div
                 ref={text1Ref}
-                className="absolute text-[1.875rem] text-center max-w-90 font-semibold tracking-[-.056rem] leading-[1.33]"
+                className="experience-text absolute text-[1.875rem] text-center max-w-90 font-semibold tracking-[-.056rem] leading-[1.33]"
               >
                 We turn your creative vision into powerful digital brand
                 experiences
               </div>
               <div
                 ref={text2Ref}
-                className="absolute text-[1.875rem] text-center max-w-90 font-semibold tracking-[-.056rem] leading-[1.33]"
+                className="experience-text absolute text-[1.875rem] text-center max-w-90 font-semibold tracking-[-.056rem] leading-[1.33]"
               >
                 We build intelligent systems that automate, scale and evolve
                 with your business
               </div>
               <div
                 ref={text3Ref}
-                className="absolute text-[1.875rem] text-center max-w-90 font-semibold tracking-[-.056rem] leading-[1.33]"
+                className="experience-text absolute text-[1.875rem] text-center max-w-90 font-semibold tracking-[-.056rem] leading-[1.33]"
               >
                 We craft seamless experiences where design meets purpose and
                 technology

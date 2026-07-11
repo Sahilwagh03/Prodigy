@@ -37,7 +37,6 @@ const AboutServices = () => {
           width={600}
           height={600}
           className="crystal-img w-62.5 lg:w-[clamp(320px,30vw,520px)] h-auto shrink-0 rotate-[-20deg] z-20"
-          priority
         />
 
         <div

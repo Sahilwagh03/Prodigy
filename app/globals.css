@@ -106,3 +106,21 @@ body {
 .hero-service {
   opacity: 0;
 }
+
+/* GPU Compositing promotion for smooth blur animations */
+.hero-heading-line,
+.hero-paragraph,
+.hero-button,
+.hero-service,
+.partner-title,
+.partner-card,
+.services-heading,
+.services-button,
+.testimonial-heading h2,
+.testimonial-heading p,
+.testimonial-card,
+.service-text,
+.service-btn,
+.experience-text {
+  will-change: transform, opacity, filter;
+}

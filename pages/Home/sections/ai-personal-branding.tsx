@@ -79,7 +79,6 @@ export default function AIPersonalBranding() {
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
-                    priority={card.id === 1}
                   />
 
                   {/* Aesthetic Dark Gradient Overlay */}

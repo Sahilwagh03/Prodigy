@@ -5,6 +5,9 @@ import SmoothScrollProvider from "@/components/smooth-scroll-provider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/pages/Home/sections/footer";
 import "./globals.css";
+import { preload } from "react-dom";
+
+preload("/dotted-bg.webp", { as: "image", fetchPriority: "high" });
 
 const inter = Inter_Tight({
   subsets: ["latin"],
