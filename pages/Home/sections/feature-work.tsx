@@ -11,31 +11,31 @@ import { useVideoPlayback } from "@/context/VideoPlaybackContext";
 const featuredReels = [
   {
     id: 1,
+    video: "https://res.cloudinary.com/dmrjruik5/video/upload/v1783742634/NOVUS_ivq52g.mp4",
+    thumbnail: "https://res.cloudinary.com/dmrjruik5/video/upload/f_auto,q_auto,w_600,h_1066,c_fill,so_2.3/v1783742634/NOVUS_ivq52g.jpg",
+    title: "Novus",
+    year: "2024",
+  },
+  {
+    id: 2,
+    video: "https://res.cloudinary.com/dmrjruik5/video/upload/v1783742632/Jason_Final_kb2t2t.mp4",
+    thumbnail: "https://res.cloudinary.com/dmrjruik5/video/upload/f_auto,q_auto,w_600,h_1066,c_fill,so_29.8/v1783742632/Jason_Final_kb2t2t.jpg",
+    title: "Jason",
+    year: "2025",
+  },
+  {
+    id: 3,
     video: "https://res.cloudinary.com/dmrjruik5/video/upload/v1783221972/tyagi_media_akmjy1.mp4",
     thumbnail: "https://res.cloudinary.com/dmrjruik5/video/upload/f_auto,q_auto,w_600,h_1066,c_fill,so_37.52/v1783221972/tyagi_media_akmjy1.jpg",
     title: "Tyagi Media",
     year: "2024",
   },
   {
-    id: 2,
-    video: "https://res.cloudinary.com/dmrjruik5/video/upload/v1783221968/Final_fx1tlk.mp4",
-    thumbnail: "https://res.cloudinary.com/dmrjruik5/video/upload/f_auto,q_auto,w_600,h_1066,c_fill,so_22.28/v1783221968/Final_fx1tlk.jpg",
-    title: "Content Growth",
-    year: "2026",
-  },
-  {
-    id: 3,
+    id: 4,
     video: "https://res.cloudinary.com/dmrjruik5/video/upload/v1783222253/banana_xjp7hi.mp4",
     thumbnail: "https://res.cloudinary.com/dmrjruik5/video/upload/f_auto,q_auto,w_600,h_1066,c_fill,so_1.56/v1783222253/banana_xjp7hi.jpg",
     title: "Banana Export",
     year: "2026",
-  },
-  {
-    id: 4,
-    video: "https://res.cloudinary.com/dmrjruik5/video/upload/v1783157431/featured-work-3_zmsekw.mp4",
-    thumbnail: "https://res.cloudinary.com/dmrjruik5/image/upload/v1783157431/featured-work-3_zmsekw.jpg",
-    title: "AI Automation",
-    year: "2025",
   },
 ];
 

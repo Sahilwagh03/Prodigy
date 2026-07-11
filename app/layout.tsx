@@ -45,13 +45,23 @@ export const metadata: Metadata = {
         sizes: "any",
       },
       {
+        url: "/favicon-32x32.png",
+        type: "image/png",
+        sizes: "32x32",
+      },
+      {
+        url: "/android-chrome-192x192.png",
+        type: "image/png",
+        sizes: "192x192",
+      },
+      {
         url: "/icon.png",
         type: "image/png",
         sizes: "512x512",
       },
     ],
     shortcut: "/favicon.ico",
-    apple: "/apple-icon.png",
+    apple: "/apple-touch-icon.png",
   },
 
   robots: {
@@ -96,7 +106,7 @@ export const metadata: Metadata = {
     images: ["/opengraph-image.png"],
   },
 
-  manifest: "/site.webmanifest",
+  manifest: "/manifest.json",
 };
 
 const jsonLd = {

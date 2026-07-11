@@ -17,12 +17,12 @@ const AboutServices = () => {
   );
 
   const services = [
-    "Branding identity",
-    "UI/UX design",
-    "Web development",
-    "Visual design",
-    "Photography",
-    "Product design",
+    "Personal Branding",
+    "Brand Identity",
+    "Video Editing",
+    "Web Development",
+    "AI Avatars",
+    "Social Growth"
   ];
 
   return (
@@ -48,8 +48,8 @@ const AboutServices = () => {
 
         <div className="absolute perspective-[130vw] origin-[50%] w-full h-svh z-30">
           <div className="services-wrapper text-white">
-            {services.map((service,idx) => (
-              <div key={service} className={cn("service-content text-center text-[clamp(0.9rem,4vw,1.6rem)] lg:text-[clamp(1.5rem,7vw,9.37rem)] font-semibold",`service-${idx+1}`)}>{service}</div>
+            {services.map((service, idx) => (
+              <div key={service} className={cn("service-content text-center text-[clamp(0.9rem,4vw,1.6rem)] lg:text-[clamp(1.5rem,7vw,9.37rem)] font-semibold", `service-${idx + 1}`)}>{service}</div>
             ))}
           </div>
         </div>
