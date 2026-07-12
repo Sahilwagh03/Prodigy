@@ -5,14 +5,18 @@ import Link from "next/link";
 export default function LetConnect() {
   return (
     <section className="w-full pt-12 lg:pt-24">
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
+      <div className="max-w-340 mx-auto grid lg:grid-cols-2 gap-16 items-start">
         <div className="flex flex-col justify-between h-full">
           <div>
             <h2 className="text-4xl lg:text-5xl font-semibold leading-tight">
               Let’s connect! <br /> Reach out anytime!
             </h2>
 
-            <div className="mt-16 grid grid-cols-2 gap-y-10 text-sm">
+            <p className="mt-6 text-gray-600 max-w-md leading-relaxed">
+              We help ambitious brands design high-performance websites and custom software solutions. Get in touch to discuss your project.
+            </p>
+
+            <div className="mt-10 grid grid-cols-2 gap-y-10 text-sm">
               <div>
                 <p className="text-gray-500 uppercase text-[.875rem] leading-[1.71] tracking-[.0675rem] font-semibold">
                   Email

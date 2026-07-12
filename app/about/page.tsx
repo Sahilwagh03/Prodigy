@@ -10,6 +10,9 @@ import ServicesHighlight from "@/pages/Services/services-highlight";
 export const metadata: Metadata = {
   title: "About Us",
   description: "Learn more about Prodigy, a leading digital agency dedicated to web design, custom software engineering, and strategic marketing.",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 const AboutPage = () => {

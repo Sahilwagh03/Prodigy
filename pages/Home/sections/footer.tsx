@@ -40,7 +40,7 @@ export default function Footer() {
           <div className="space-y-8">
             <div className="flex flex-col gap-4">
               <Link
-                href="mailto: Info@prodigymedia.in"
+                href="mailto:info@prodigymedia.in"
                 className="text-[2rem] lg:text-[3rem] font-bold tracking-tight flex gap-2 items-center hover:opacity-70 transition-opacity leading-tight"
               >
                 Info@prodigymedia.in
@@ -80,7 +80,6 @@ export default function Footer() {
                 <p className="mb-4 font-semibold uppercase">Utility Pages</p>
                 <ul className="space-y-3">
                   <li><Link href="/">Licenses</Link></li>
-                  <li><Link href="/not-found">404 Page</Link></li>
                 </ul>
               </div>
             </div>
