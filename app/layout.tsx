@@ -80,14 +80,14 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: "https://www.prodigymedia.in",
+    canonical: "https://www.prodigymedia.in/",
   },
 
   openGraph: {
     title: "Prodigy | Web Design, Software & Digital Marketing Agency",
     description:
       "We design high-performance websites, engineer custom software solutions, and develop data-driven marketing strategies that accelerate brand growth.",
-    url: "https://www.prodigymedia.in",
+    url: "https://www.prodigymedia.in/",
     siteName: "Prodigy",
     locale: "en_US",
     type: "website",
@@ -116,7 +116,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Prodigy",
-  url: "https://www.prodigymedia.in",
+  url: "https://www.prodigymedia.in/",
   logo: "https://www.prodigymedia.in/icon.png",
   description:
     "Prodigy is a modern digital agency building high-performance websites, scalable software solutions, and result-driven digital marketing strategies.",
