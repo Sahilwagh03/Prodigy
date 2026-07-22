@@ -116,6 +116,7 @@ function ReelCard({ reel }: ReelCardProps) {
             src={reel.video}
             loop
             playsInline
+            crossOrigin="anonymous"
             poster={thumbnailUrl}
             onPause={handleNativePause}
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -125,6 +126,9 @@ function ReelCard({ reel }: ReelCardProps) {
             src={thumbnailUrl}
             alt={reel.title}
             loading="lazy"
+            crossOrigin="anonymous"
+            width={600}
+            height={1066}
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         )}

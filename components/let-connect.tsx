@@ -31,7 +31,7 @@ export default function LetConnect() {
                   Phone
                 </p>
                 <p className="text-[1.125rem] leading-[1.45] tracking-[-.033rem] mt-2 font-semibold">
-                  +91 9324235779
+                  +91 73040 58859
                 </p>
               </div>
 

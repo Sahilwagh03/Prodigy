@@ -30,12 +30,14 @@ const Navbar = ({ forceShowNavbar = false }: NavbarProps) => {
       )}
     >
       <div className="flex justify-start h-full items-center logo">
-        <Logo
-          className={cn(
-            "w-fit h-10",
-            isForced ? "text-white" : "text-black"
-          )}
-        />
+        <Link href="/" aria-label="Prodigy Home">
+          <Logo
+            className={cn(
+              "w-fit h-10",
+              isForced ? "text-white" : "text-black"
+            )}
+          />
+        </Link>
       </div>
 
       <nav
@@ -45,23 +47,24 @@ const Navbar = ({ forceShowNavbar = false }: NavbarProps) => {
         )}
       >
         <ul className="flex flex-row justify-end items-center text-[1.125rem] h-full font-semibold">
-          <Link href="/">
-            <li className="cursor-pointer transition pl-4 pr-5">Home</li>
-          </Link>
-          <Link href="/about">
-            <li className="cursor-pointer transition pl-4 pr-5">About</li>
-          </Link>
-          <Link href="/services">
-            <li className="cursor-pointer transition pl-4 pr-5">Services</li>
-          </Link>
-          <Link href="/contact">
-            <li className="cursor-pointer transition pl-4 pr-5">Contact</li>
-          </Link>
+          <li className="cursor-pointer transition pl-4 pr-5">
+            <Link href="/">Home</Link>
+          </li>
+          <li className="cursor-pointer transition pl-4 pr-5">
+            <Link href="/about">About</Link>
+          </li>
+          <li className="cursor-pointer transition pl-4 pr-5">
+            <Link href="/services">Services</Link>
+          </li>
+          <li className="cursor-pointer transition pl-4 pr-5">
+            <Link href="/contact">Contact</Link>
+          </li>
         </ul>
       </nav>
 
-      <div
-        className="flex flex-col justify-between w-8 h-5 cursor-pointer justify-self-end"
+      <button
+        aria-label="Toggle navigation menu"
+        className="flex flex-col justify-between w-8 h-5 cursor-pointer justify-self-end bg-transparent border-none outline-none focus:outline-none p-0"
         onClick={() => setOpen((prev) => !prev)}
       >
         <div
@@ -82,7 +85,7 @@ const Navbar = ({ forceShowNavbar = false }: NavbarProps) => {
             isForced ? "bg-white" : "bg-black"
           )}
         />
-      </div>
+      </button>
 
       {open && <NavMenu onClose={() => setOpen(false)} />}
     </div>

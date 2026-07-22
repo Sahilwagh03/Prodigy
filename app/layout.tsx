@@ -12,6 +12,7 @@ preload("/dotted-bg.webp", { as: "image", fetchPriority: "high" });
 const inter = Inter_Tight({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
 });
 
 export const metadata: Metadata = {

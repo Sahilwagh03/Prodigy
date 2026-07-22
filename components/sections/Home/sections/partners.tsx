@@ -5,6 +5,8 @@ import { useRef } from "react";
 import { gsap } from "@/lib/gsap";
 import { useGSAP } from "@gsap/react";
 
+import Image from "next/image";
+
 const Partners = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -21,9 +23,18 @@ const Partners = () => {
   return (
     <div
       ref={sectionRef}
-      className="h-auto bg-cover pt-8 lg:pt-20 bg-no-repeat bg-position-[50%] bg-[url(/dotted-bg.webp)]"
+      className="relative h-auto pt-8 lg:pt-20 overflow-hidden"
     >
-      <div className="flex flex-col gap-6 px-4">
+      {/* Optimized LCP Background Image */}
+      <Image
+        src="/dotted-bg.webp"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-center -z-10 pointer-events-none"
+      />
+      <div className="relative z-10 flex flex-col gap-6 px-4">
         <div className="flex flex-col gap-4 lg:flex-row justify-center">
           <h6 className="partner-title text-[0.8rem] leading-[1.75] tracking-[.0675rem] font-semibold uppercase">
             Our Partners

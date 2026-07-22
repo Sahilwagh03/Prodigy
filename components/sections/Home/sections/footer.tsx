@@ -31,7 +31,7 @@ export default function Footer() {
             </div>
 
             <div className="hidden md:flex items-center gap-4 text-neutral-600">
-              <Link target="_blank" href="https://www.instagram.com/prodigymedia.in/" className="text-[1.125rem] leading-[1.45] tracking-[-.033rem] font-semibold flex items-center gap-2 hover:opacity-70 transition">
+              <Link target="_blank" aria-label="Instagram" href="https://www.instagram.com/prodigymedia.in/" className="text-[1.125rem] leading-[1.45] tracking-[-.033rem] font-semibold flex items-center gap-2 hover:opacity-70 transition">
                 <Instagram size={20} />
               </Link>
             </div>
@@ -52,7 +52,7 @@ export default function Footer() {
               </Link>
 
               <div className="flex md:hidden items-center gap-4 text-neutral-600">
-                <Link target="_blank" href="https://www.instagram.com/prodigymedia.in/" className="text-[1.125rem] leading-[1.45] tracking-[-.033rem] font-semibold flex items-center gap-2 hover:opacity-70 transition">
+                <Link target="_blank" aria-label="Instagram" href="https://www.instagram.com/prodigymedia.in/" className="text-[1.125rem] leading-[1.45] tracking-[-.033rem] font-semibold flex items-center gap-2 hover:opacity-70 transition">
                   <Instagram size={20} />
                 </Link>
               </div>
@@ -86,8 +86,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t text-center lg:text-right border-neutral-200 pt-4 flex flex-col md:flex-row justify-between items-center gap-3 text-sm text-neutral-500">
-          <Link href="/">
+        <div className="border-t text-center lg:text-right border-neutral-200 pt-4 flex flex-col md:flex-row justify-between items-center gap-3 text-sm text-zinc-600">
+          <Link href="/" aria-label="Prodigy Home Logo">
             <Logo className="text-black w-auto h-10" />
           </Link>
 

@@ -28,7 +28,7 @@ const AboutServices = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full h-screen overflow-hidden mb-4 lg:mb-12"
+      className="relative w-full h-screen overflow-hidden mb-4 lg:mb-12 bg-black text-white"
     >
       <div className="about-services-container relative w-full h-full flex justify-center items-center">
         <Image

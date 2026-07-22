@@ -122,5 +122,5 @@ body {
 .service-text,
 .service-btn,
 .experience-text {
-  will-change: transform, opacity, filter;
+  will-change: transform, opacity;
 }

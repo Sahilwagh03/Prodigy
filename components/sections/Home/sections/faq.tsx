@@ -17,7 +17,7 @@ const Faq = () => {
     <section
       ref={sectionRef}
       id="faq"
-      className="py-8 lg:py-28 rounded-4xl mx-4 mb-4 lg:mb-12 overflow-hidden"
+      className="py-8 lg:pt-28 rounded-4xl mx-4 mb-4 lg:mb-12 overflow-hidden"
     >
       <div className="w-full h-full px-4 max-w-340 mx-auto">
         <div className="h-full flex flex-col lg:flex-row gap-7">

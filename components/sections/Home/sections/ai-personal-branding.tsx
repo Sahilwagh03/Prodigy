@@ -14,7 +14,7 @@ const brandingCards = [
     description:
       "Turn every post into a growth engine with AI-powered content strategies designed to maximize reach, engagement, and millions of organic views.",
     image:
-      "https://res.cloudinary.com/dmrjruik5/image/upload/v1783157432/featured-work-4_gwlt3r.jpg",
+      "https://res.cloudinary.com/dmrjruik5/image/upload/c_scale,w_600/v1783157432/featured-work-4_gwlt3r.jpg",
     insta_url: "https://www.instagram.com/p/DaRza4XEfia/?img_index=1"
   },
   {
@@ -24,7 +24,7 @@ const brandingCards = [
     description:
       "Build a recognizable personal brand that attracts loyal followers, establishes credibility, and creates lasting influence across social platforms.",
     image:
-      "https://res.cloudinary.com/dmrjruik5/image/upload/v1783157432/featured-work-2_a7fuxz.jpg",
+      "https://res.cloudinary.com/dmrjruik5/image/upload/c_scale,w_600/v1783157432/featured-work-2_a7fuxz.jpg",
     insta_url: "https://www.instagram.com/p/DaUcuD8FvNW/?img_index=1"
   },
   {
@@ -34,7 +34,7 @@ const brandingCards = [
     description:
       "Leverage AI workflows to consistently produce high-performing content, accelerate audience growth, and position yourself as an industry leader.",
     image:
-      "https://res.cloudinary.com/dmrjruik5/image/upload/v1783159346/ai-personal-branding_kp777m.jpg",
+      "https://res.cloudinary.com/dmrjruik5/image/upload/c_scale,w_600/v1783159346/ai-personal-branding_kp777m.jpg",
     insta_url: "https://www.instagram.com/p/DaXO7ivDoKh/?img_index=1"
   },
 ];
@@ -77,7 +77,7 @@ export default function AIPersonalBranding() {
                     src={card.image}
                     alt={card.title}
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    sizes="(max-width: 640px) 450px, (max-width: 1024px) 50vw, 450px"
                     className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
                   />
 

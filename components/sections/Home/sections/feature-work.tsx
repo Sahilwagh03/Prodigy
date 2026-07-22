@@ -96,6 +96,7 @@ function FeatureVideoCard({ reel }: FeatureVideoCardProps) {
             src={reel.video}
             loop
             playsInline
+            crossOrigin="anonymous"
             poster={reel.thumbnail}
             onPause={handleNativePause}
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -105,6 +106,9 @@ function FeatureVideoCard({ reel }: FeatureVideoCardProps) {
             src={reel.thumbnail}
             alt={reel.title}
             loading="lazy"
+            crossOrigin="anonymous"
+            width={600}
+            height={1066}
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         )}

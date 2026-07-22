@@ -21,7 +21,7 @@ const PartnerCard = ({
   return (
     <div
       className={cn(
-        "group relative bg-white hover:bg-black transition-all duration-500 flex justify-center items-center py-12 px-8 rounded-[1.25rem] cursor-pointer partner-card",
+        "group relative bg-white hover:bg-black transition-[background-color,transform,opacity] duration-500 flex justify-center items-center py-12 px-8 rounded-[1.25rem] cursor-pointer partner-card",
         className
       )}
     >

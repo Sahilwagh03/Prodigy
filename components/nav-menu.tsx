@@ -99,6 +99,7 @@ const NavMenu = ({ onClose }: NavMenuProps) => {
       >
         {/* Close Button */}
         <button
+          aria-label="Close menu"
           onClick={() => animateClose()}
           className="cursor-pointer absolute top-6 right-6 w-12 h-12 rounded-full bg-[#d9d9d9] flex items-center justify-center hover:bg-[#cfcfcf] transition"
         >
