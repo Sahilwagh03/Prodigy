@@ -1,0 +1,36 @@
+# Prodigy Media
+
+Prodigy Media is a premium digital agency based in Mumbai, India. We engineer high-performance websites, custom software, digital branding systems, and data-driven marketing campaigns for ambitious global brands.
+
+## Core Pages
+- **Home** (https://www.prodigymedia.in): Overview of services, core technologies, and active client partnerships.
+- **About** (https://www.prodigymedia.in/about): Background on our technical development stack, engineering philosophy, and creative direction.
+- **Services** (https://www.prodigymedia.in/services): Breakdown of our premium services, packages, pricing tiers, and project onboarding workflows.
+- **Contact** (https://www.prodigymedia.in/contact): Inquiries, office maps, WhatsApp links, and forms for project architecture consultations.
+
+## Services Breakdown
+
+### 1. Digital Marketing & Performance SEO
+Comprehensive growth campaigns targeting search optimization (SEO), social ad creative suites, performance tracking analytics, and B2B LinkedIn/PPC positioning.
+
+### 2. Software Development & Web Apps
+Custom enterprise-grade software development. Our technical stack includes Next.js, React, Node.js, TypeScript, React Native, and robust AWS cloud architectures.
+
+### 3. Personal Branding
+Executive personal branding and authority building using AI content systems for founders, creators, and corporate leaders.
+
+### 4. Brand Identity & Logo Design
+Corporate identity packages, logos, typography, visual style guides, and comprehensive brand voice assets.
+
+### 5. UGC Video Creation & Ad Production
+Authentic user-generated content (UGC) scripts, casting networks, and video ad edits designed for Meta, TikTok, and YouTube marketing.
+
+### 6. Professional Video Editing
+Cinematic post-production, short-form reel formatting, explainers, motion graphics, and audio mixing.
+
+### 7. AI Avatar Creation & Voice Cloning
+Custom digital twins, neural voice cloning, and text-to-speech video presenters supporting localized outputs in over 40 languages.
+
+## Contact Information
+- **Email**: info@prodigymedia.in
+- **Location**: Mumbai, Maharashtra, India

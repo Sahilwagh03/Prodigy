@@ -66,7 +66,10 @@ export default function LetConnect() {
           <form className="space-y-10">
             <div>
               <input
+                id="form-name"
+                name="name"
                 type="text"
+                aria-label="Enter your name"
                 placeholder="Enter your name*"
                 className="w-full bg-transparent border-b border-gray-300 py-3 outline-none focus:border-black transition"
               />
@@ -74,13 +77,19 @@ export default function LetConnect() {
 
             <div className="grid md:grid-cols-2 gap-8">
               <input
+                id="form-email"
+                name="email"
                 type="email"
+                aria-label="Your email"
                 placeholder="Your email*"
                 className="w-full bg-transparent border-b border-gray-300 py-3 outline-none focus:border-black transition"
               />
 
               <input
+                id="form-phone"
+                name="phone"
                 type="tel"
+                aria-label="Your phone"
                 placeholder="Your phone*"
                 className="w-full bg-transparent border-b border-gray-300 py-3 outline-none focus:border-black transition"
               />
@@ -88,12 +97,20 @@ export default function LetConnect() {
 
             <div className="grid md:grid-cols-2 gap-8">
               <input
+                id="form-company"
+                name="company"
                 type="text"
+                aria-label="Company name"
                 placeholder="Company name*"
                 className="w-full bg-transparent border-b border-gray-300 py-3 outline-none focus:border-black transition"
               />
 
-              <select className="w-full bg-transparent border-b border-gray-300 py-3 outline-none focus:border-black transition text-gray-500">
+              <select
+                id="form-budget"
+                name="budget"
+                aria-label="Select your budget"
+                className="w-full bg-transparent border-b border-gray-300 py-3 outline-none focus:border-black transition text-gray-500"
+              >
                 <option>Select your budget...</option>
                 <option>$2k - $5k</option>
                 <option>$5k - $10k</option>
@@ -103,6 +120,9 @@ export default function LetConnect() {
 
             <div>
               <textarea
+                id="form-message"
+                name="message"
+                aria-label="Enter your message"
                 placeholder="Enter your message..."
                 rows={4}
                 className="w-full bg-transparent border-b border-gray-300 py-3 outline-none focus:border-black transition resize-none"
