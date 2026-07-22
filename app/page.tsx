@@ -5,7 +5,6 @@ import Faq from "@/components/sections/Home/sections/faq";
 import FeatureWork from "@/components/sections/Home/sections/feature-work";
 import HeroSection from "@/components/sections/Home/sections/hero";
 import Partners from "@/components/sections/Home/sections/partners";
-import Services from "@/components/sections/Home/sections/services";
 import Testimonial from "@/components/sections/Home/sections/testimonial";
 import WorkShowcaseSection from "@/components/sections/Home/sections/work-section";
 import AIPersonalBranding from "@/components/sections/Home/sections/ai-personal-branding";
