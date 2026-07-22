@@ -1,8 +1,8 @@
 'use client';
 import { useRef } from "react";
-import TalkButton from "../../../components/talk-button";
+import TalkButton from "@/components/talk-button";
 import { CONTACT_WHATSAPP_URL } from "@/constant/links";
-import FaqAccordion from "../../../components/faq-accordion";
+import FaqAccordion from "@/components/faq-accordion";
 import { animateFaq } from "@/animation/faq";
 import { useGSAP } from "@gsap/react";
 

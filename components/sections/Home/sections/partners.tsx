@@ -1,6 +1,6 @@
 "use client";
 import { animatePartners } from "@/animation/partners";
-import PartnerCard from "../../../components/partner-card";
+import PartnerCard from "@/components/partner-card";
 import { useRef } from "react";
 import { gsap } from "@/lib/gsap";
 import { useGSAP } from "@gsap/react";

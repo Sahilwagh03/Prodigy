@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { Play, Pause } from "lucide-react";
-import TalkButton from "../../../components/talk-button";
+import TalkButton from "@/components/talk-button";
 import { animateFeatureWork } from "@/animation/feature";
 import { gsap } from "@/lib/gsap";
 import { useGSAP } from "@gsap/react";

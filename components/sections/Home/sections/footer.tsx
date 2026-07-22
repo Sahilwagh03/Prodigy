@@ -6,9 +6,9 @@ import {
   Linkedin,
 } from "lucide-react";
 import Link from "next/link";
-import TalkButton from "../../../components/talk-button";
+import TalkButton from "@/components/talk-button";
 import { CONTACT_WHATSAPP_URL } from "@/constant/links";
-import Logo from "../../../components/logo";
+import Logo from "@/components/logo";
 
 export default function Footer() {
   return (

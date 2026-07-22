@@ -3,7 +3,7 @@ import { Inter_Tight } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import SmoothScrollProvider from "@/components/smooth-scroll-provider";
 import Navbar from "@/components/Navbar";
-import Footer from "@/pages/Home/sections/footer";
+import Footer from "@/components/sections/Home/sections/footer";
 import "./globals.css";
 import { preload } from "react-dom";
 
@@ -80,7 +80,7 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: "https://www.prodigymedia.in/",
+    canonical: "https://www.prodigymedia.in",
   },
 
   openGraph: {

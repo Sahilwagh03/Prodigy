@@ -2,10 +2,10 @@
 
 import { useRef } from "react";
 import { gsap } from "gsap";
-import ServiceItem from "../../../components/service-item";
-import TalkButton from "../../../components/talk-button";
+import ServiceItem from "@/components/service-item";
+import TalkButton from "@/components/talk-button";
 import { CONTACT_WHATSAPP_URL } from "@/constant/links";
-import Navbar from "../../../components/Navbar";
+import Navbar from "@/components/Navbar";
 import { animateHeroElements } from "@/animation/hero";
 import { useGSAP } from "@gsap/react";
 

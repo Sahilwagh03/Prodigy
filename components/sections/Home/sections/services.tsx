@@ -1,6 +1,6 @@
 "use client";
 
-import TalkButton from "../../../components/talk-button";
+import TalkButton from "@/components/talk-button";
 import { CONTACT_WHATSAPP_URL } from "@/constant/links";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";

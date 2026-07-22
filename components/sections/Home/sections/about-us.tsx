@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import TalkButton from "../../../components/talk-button";
+import TalkButton from "@/components/talk-button";
 import { CONTACT_WHATSAPP_URL } from "@/constant/links";
 import { Plus } from "lucide-react";
 import { useRef } from "react";
