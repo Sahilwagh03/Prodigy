@@ -21,7 +21,7 @@ const HeroSection = () => {
     <div ref={heroRef} className="mt-5 mx-[0.95rem]">
       <div className="relative h-auto lg:h-[110vh] bg-black rounded-4xl overflow-hidden">
         <div className="px-2 w-full lg:px-3.75 pt-[0.2rem] h-20 border-b border-white/20 absolute z-50">
-          <Navbar forceShowNavbar/>
+          <Navbar forceShowNavbar />
         </div>
 
         {/* Gradient Blobs */}
@@ -63,13 +63,13 @@ const HeroSection = () => {
 
               <div className="w-full lg:max-w-[18rem] flex flex-1 flex-col gap-6 text-white">
                 <div className="hero-service">
-                  <ServiceItem title="Web Design" />
+                  <ServiceItem title="Brand Identity" />
                 </div>
                 <div className="hero-service">
                   <ServiceItem title="Digital Marketing" />
                 </div>
                 <div className="hero-service">
-                  <ServiceItem title="Brand Identity" />
+                  <ServiceItem title="Web Design" />
                 </div>
               </div>
             </div>

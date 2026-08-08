@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import SmoothScrollProvider from "@/components/smooth-scroll-provider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/sections/Home/sections/footer";
+import WhatsAppButton from "@/components/whatsapp-button";
 import "./globals.css";
 import { preload } from "react-dom";
 
@@ -351,6 +352,7 @@ export default function RootLayout({
             <Navbar />
             {children}
             <Footer />
+            <WhatsAppButton />
           </SmoothScrollProvider>
         </ThemeProvider>
       </body>

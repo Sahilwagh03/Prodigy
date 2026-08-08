@@ -19,7 +19,7 @@ const Faq = () => {
       id="faq"
       className="py-8 lg:pt-28 rounded-4xl mx-4 mb-4 lg:mb-12 overflow-hidden"
     >
-      <div className="w-full h-full px-4 max-w-340 mx-auto">
+      <div className="w-full h-full lg:px-4 max-w-340 mx-auto">
         <div className="h-full flex flex-col lg:flex-row gap-7">
           <div className="flex-3 flex flex-col justify-between h-auto">
             <div className="faq-heading flex flex-col gap-6">

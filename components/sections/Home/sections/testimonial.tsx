@@ -34,7 +34,7 @@ const Testimonial = () => {
 
           {/* Testimonial Bento Grid */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-            
+
             {/* Card 1: Left Tall Card (Spans 5 columns out of 12 on desktop) */}
             <div className="testimonial-card md:col-span-5 bg-white border border-zinc-200/80 rounded-[32px] p-8 shadow-sm flex flex-col justify-between h-full min-h-[380px] md:min-h-[480px]">
               <div>
@@ -69,7 +69,7 @@ const Testimonial = () => {
 
             {/* Right Side Container (Spans 7 columns out of 12 on desktop) */}
             <div className="md:col-span-7 flex flex-col gap-6">
-              
+
               {/* Card 2: Right Top Wide Card */}
               <div className="testimonial-card bg-white border border-zinc-200/80 rounded-[32px] p-8 shadow-sm flex flex-col justify-between h-full min-h-[220px]">
                 <div>
@@ -100,7 +100,7 @@ const Testimonial = () => {
 
               {/* Bottom Row Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                
+
                 {/* Card 3: Bottom Left Card */}
                 <div className="testimonial-card bg-white border border-zinc-200/80 rounded-[32px] p-8 shadow-sm flex flex-col justify-between h-full min-h-[220px]">
                   <div className="flex flex-col justify-center mb-6">
